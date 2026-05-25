@@ -175,6 +175,78 @@
       .founder-grid, .faq-grid { grid-template-columns: 1fr; gap: 2rem; }
       .founder-img { max-width: 100%; margin: 0 auto; }
     }
+
+    /* ── FLOATING MUSIC WIDGET ── */
+    .music-widget {
+      position: fixed; bottom: 20px; left: 20px; z-index: 200;
+      font-family: 'Oswald', sans-serif;
+      transition: all 0.3s ease;
+    }
+    .music-pill {
+      background: var(--dark); color: var(--gold);
+      border: 2px solid var(--gold); border-radius: 999px;
+      padding: 0.65rem 1.1rem 0.65rem 0.85rem;
+      display: flex; align-items: center; gap: 0.6rem;
+      cursor: pointer;
+      font-weight: 700; letter-spacing: 2px;
+      font-size: 0.78rem; text-transform: uppercase;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.45);
+      transition: all 0.2s;
+      user-select: none;
+    }
+    .music-pill:hover { background: #222; transform: translateY(-2px); }
+    .music-pill .ico {
+      width: 28px; height: 28px;
+      background: var(--gold); color: var(--dark);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.85rem;
+    }
+    .music-pill .ico::before { content: "♪"; }
+    .music-widget.open .music-pill .ico::before { content: "✕"; }
+    .music-widget .label-line2 { display: block; font-size: 0.62rem; color: rgba(201,168,76,0.65); letter-spacing: 3px; margin-top: 2px; }
+
+    .music-panel {
+      display: none;
+      margin-top: 0.6rem;
+      background: var(--dark); border: 2px solid var(--gold);
+      width: 360px; max-width: calc(100vw - 40px);
+      padding: 1rem; box-shadow: 0 8px 28px rgba(0,0,0,0.6);
+    }
+    .music-widget.open .music-panel { display: block; }
+    .music-panel .mp-head {
+      font-size: 0.78rem; color: var(--gold);
+      letter-spacing: 3px; font-weight: 700;
+      text-transform: uppercase; margin-bottom: 0.5rem;
+    }
+    .music-panel .mp-art {
+      font-size: 0.7rem; color: rgba(250,244,225,0.55);
+      letter-spacing: 2px; margin-bottom: 0.85rem;
+    }
+    .music-panel iframe {
+      width: 100%; height: 152px; border-radius: 8px; border: 0; display: block;
+      margin-bottom: 0.85rem;
+    }
+    .music-panel .mp-links {
+      display: flex; gap: 0.5rem; flex-wrap: wrap;
+    }
+    .music-panel .mp-link {
+      flex: 1; min-width: 95px;
+      background: transparent; color: var(--cream);
+      border: 1px solid rgba(250,244,225,0.25);
+      padding: 0.4rem 0.5rem;
+      font-size: 0.7rem; letter-spacing: 1.5px; font-weight: 600;
+      text-transform: uppercase; text-align: center;
+      text-decoration: none; border-radius: 3px;
+      transition: all 0.15s;
+    }
+    .music-panel .mp-link:hover { border-color: var(--gold); color: var(--gold); }
+
+    @media (max-width: 600px) {
+      .music-widget { bottom: 12px; left: 12px; }
+      .music-panel { width: calc(100vw - 24px); }
+      .music-pill { font-size: 0.72rem; padding: 0.55rem 0.9rem 0.55rem 0.65rem; }
+    }
   </style>
 </head>
 <body>
@@ -499,6 +571,36 @@
   </div>
   <div style="margin-top:1rem;font-size:0.78rem;color:rgba(255,255,255,0.3);">© Speak Easy · languagespeakeasy.com</div>
 </footer>
+
+<!-- FLOATING MUSIC WIDGET — Touche Pussycat Vol. 1 -->
+<!-- Swap the placeholders:
+     SPOTIFY-ALBUM-ID    → your Spotify album ID (the part after /album/ in the URL)
+     APPLE-MUSIC-URL     → full Apple Music album URL
+     BANDCAMP-URL        → full Bandcamp album URL
+     SOUNDCLOUD-URL      → full SoundCloud URL -->
+<div class="music-widget" id="musicWidget">
+  <div class="music-pill" onclick="document.getElementById('musicWidget').classList.toggle('open')">
+    <span class="ico"></span>
+    <span>
+      TOUCHE PUSSYCAT
+      <span class="label-line2">VOL 1 · DR. NICOLE BISHOP</span>
+    </span>
+  </div>
+  <div class="music-panel">
+    <div class="mp-head">Now Playing</div>
+    <div class="mp-art">Touche Pussycat · Vol 1</div>
+    <iframe
+      src="https://open.spotify.com/embed/album/SPOTIFY-ALBUM-ID?utm_source=generator&theme=0"
+      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+      loading="lazy"
+      title="Touche Pussycat Vol 1 on Spotify"></iframe>
+    <div class="mp-links">
+      <a class="mp-link" href="https://music.apple.com/APPLE-MUSIC-URL" target="_blank" rel="noopener">Apple Music</a>
+      <a class="mp-link" href="https://BANDCAMP-URL" target="_blank" rel="noopener">Bandcamp</a>
+      <a class="mp-link" href="https://soundcloud.com/SOUNDCLOUD-URL" target="_blank" rel="noopener">SoundCloud</a>
+    </div>
+  </div>
+</div>
 
 </body>
 </html>
