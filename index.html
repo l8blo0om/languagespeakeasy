@@ -176,76 +176,81 @@
       .founder-img { max-width: 100%; margin: 0 auto; }
     }
 
-    /* ── FLOATING MUSIC WIDGET ── */
-    .music-widget {
-      position: fixed; bottom: 20px; left: 20px; z-index: 200;
+    /* ── SPLASH OVERLAY (first-visit play prompt) ── */
+    .music-splash {
+      position: fixed; inset: 0; z-index: 9999;
+      background: rgba(11, 11, 11, 0.97);
+      display: none; opacity: 0;
+      align-items: center; justify-content: center;
+      transition: opacity 0.5s ease;
       font-family: 'Oswald', sans-serif;
-      transition: all 0.3s ease;
+      backdrop-filter: blur(6px);
     }
-    .music-pill {
-      background: var(--dark); color: var(--gold);
-      border: 2px solid var(--gold); border-radius: 999px;
-      padding: 0.65rem 1.1rem 0.65rem 0.85rem;
-      display: flex; align-items: center; gap: 0.6rem;
-      cursor: pointer;
-      font-weight: 700; letter-spacing: 2px;
-      font-size: 0.78rem; text-transform: uppercase;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.45);
-      transition: all 0.2s;
-      user-select: none;
+    .music-splash-inner {
+      max-width: 540px; padding: 2.5rem 2rem; text-align: center;
+      animation: splashIn 0.6s ease;
     }
-    .music-pill:hover { background: #222; transform: translateY(-2px); }
-    .music-pill .ico {
-      width: 28px; height: 28px;
+    @keyframes splashIn {
+      from { transform: translateY(20px); opacity: 0; }
+      to   { transform: translateY(0); opacity: 1; }
+    }
+    .music-splash img { width: 110px; height: 110px; border: 3px solid var(--gold); border-radius: 8px; margin-bottom: 1.5rem; }
+    .music-splash .eyebrow { font-size: 0.72rem; color: var(--gold); letter-spacing: 5px; margin-bottom: 0.85rem; }
+    .music-splash .title { font-size: clamp(2.4rem, 6vw, 3.6rem); font-weight: 700; color: var(--cream); letter-spacing: 3px; line-height: 1.05; margin-bottom: 0.4rem; text-transform: uppercase; }
+    .music-splash .title .gold { color: var(--gold); }
+    .music-splash .sub { font-family: 'Special Elite', cursive; font-size: 1rem; color: rgba(250,244,225,0.7); letter-spacing: 2px; margin-bottom: 2rem; text-transform: uppercase; }
+    .music-splash .btn-play {
       background: var(--gold); color: var(--dark);
-      border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 0.85rem;
+      font-family: 'Oswald', sans-serif; font-weight: 700;
+      font-size: 1.05rem; letter-spacing: 3px; text-transform: uppercase;
+      padding: 1rem 2.4rem; border: 3px solid var(--gold);
+      cursor: pointer; transition: all 0.2s;
+      display: inline-block;
     }
-    .music-pill .ico::before { content: "♪"; }
-    .music-widget.open .music-pill .ico::before { content: "✕"; }
-    .music-widget .label-line2 { display: block; font-size: 0.62rem; color: rgba(201,168,76,0.65); letter-spacing: 3px; margin-top: 2px; }
+    .music-splash .btn-play:hover { background: var(--cream); border-color: var(--cream); transform: translateY(-2px); }
+    .music-splash .skip {
+      display: block; margin-top: 1.5rem;
+      font-size: 0.78rem; color: rgba(250,244,225,0.5);
+      letter-spacing: 2px; text-transform: uppercase;
+      cursor: pointer; background: none; border: none;
+      font-family: 'Oswald', sans-serif;
+    }
+    .music-splash .skip:hover { color: var(--gold); }
 
-    .music-panel {
-      display: none;
-      margin-top: 0.6rem;
+    /* ── CORNER MUSIC WIDGET (after play clicked) ── */
+    .music-widget {
+      position: fixed; bottom: 20px; right: 20px; z-index: 150;
+      display: none; opacity: 0;
+      flex-direction: column;
       background: var(--dark); border: 2px solid var(--gold);
-      width: 360px; max-width: calc(100vw - 40px);
-      padding: 1rem; box-shadow: 0 8px 28px rgba(0,0,0,0.6);
+      box-shadow: 0 8px 28px rgba(0,0,0,0.6);
+      width: 340px; max-width: calc(100vw - 40px);
+      transition: opacity 0.4s ease;
+      font-family: 'Oswald', sans-serif;
     }
-    .music-widget.open .music-panel { display: block; }
-    .music-panel .mp-head {
-      font-size: 0.78rem; color: var(--gold);
-      letter-spacing: 3px; font-weight: 700;
-      text-transform: uppercase; margin-bottom: 0.5rem;
+    .music-widget-bar {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0.55rem 0.85rem;
+      background: #222;
+      border-bottom: 1px solid var(--gold);
     }
-    .music-panel .mp-art {
-      font-size: 0.7rem; color: rgba(250,244,225,0.55);
-      letter-spacing: 2px; margin-bottom: 0.85rem;
+    .music-widget-bar .label {
+      font-size: 0.7rem; color: var(--gold); letter-spacing: 2.5px;
+      font-weight: 700; text-transform: uppercase;
     }
-    .music-panel iframe {
-      width: 100%; height: 152px; border-radius: 8px; border: 0; display: block;
-      margin-bottom: 0.85rem;
+    .music-widget-bar .close {
+      background: none; border: none; color: rgba(250,244,225,0.6);
+      cursor: pointer; font-size: 0.9rem; padding: 0 0.4rem;
+      font-family: inherit;
     }
-    .music-panel .mp-links {
-      display: flex; gap: 0.5rem; flex-wrap: wrap;
+    .music-widget-bar .close:hover { color: var(--gold); }
+    .music-widget iframe {
+      width: 100%; height: 175px; border: 0; display: block;
+      background: var(--dark);
     }
-    .music-panel .mp-link {
-      flex: 1; min-width: 95px;
-      background: transparent; color: var(--cream);
-      border: 1px solid rgba(250,244,225,0.25);
-      padding: 0.4rem 0.5rem;
-      font-size: 0.7rem; letter-spacing: 1.5px; font-weight: 600;
-      text-transform: uppercase; text-align: center;
-      text-decoration: none; border-radius: 3px;
-      transition: all 0.15s;
-    }
-    .music-panel .mp-link:hover { border-color: var(--gold); color: var(--gold); }
 
     @media (max-width: 600px) {
-      .music-widget { bottom: 12px; left: 12px; }
-      .music-panel { width: calc(100vw - 24px); }
-      .music-pill { font-size: 0.72rem; padding: 0.55rem 0.9rem 0.55rem 0.65rem; }
+      .music-widget { bottom: 12px; right: 12px; width: calc(100vw - 24px); }
     }
   </style>
 </head>
@@ -572,35 +577,51 @@
   <div style="margin-top:1rem;font-size:0.78rem;color:rgba(255,255,255,0.3);">© Speak Easy · languagespeakeasy.com</div>
 </footer>
 
-<!-- FLOATING MUSIC WIDGET — Touche Pussycat Vol. 1 -->
-<!-- Swap the placeholders:
-     SPOTIFY-ALBUM-ID    → your Spotify album ID (the part after /album/ in the URL)
-     APPLE-MUSIC-URL     → full Apple Music album URL
-     BANDCAMP-URL        → full Bandcamp album URL
-     SOUNDCLOUD-URL      → full SoundCloud URL -->
-<div class="music-widget" id="musicWidget">
-  <div class="music-pill" onclick="document.getElementById('musicWidget').classList.toggle('open')">
-    <span class="ico"></span>
-    <span>
-      TOUCHE PUSSYCAT
-      <span class="label-line2">VOL 1 · DR. NICOLE BISHOP</span>
-    </span>
-  </div>
-  <div class="music-panel">
-    <div class="mp-head">Now Playing</div>
-    <div class="mp-art">Touche Pussycat · Vol 1</div>
-    <iframe
-      src="https://open.spotify.com/embed/album/SPOTIFY-ALBUM-ID?utm_source=generator&theme=0"
-      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-      loading="lazy"
-      title="Touche Pussycat Vol 1 on Spotify"></iframe>
-    <div class="mp-links">
-      <a class="mp-link" href="https://music.apple.com/APPLE-MUSIC-URL" target="_blank" rel="noopener">Apple Music</a>
-      <a class="mp-link" href="https://BANDCAMP-URL" target="_blank" rel="noopener">Bandcamp</a>
-      <a class="mp-link" href="https://soundcloud.com/SOUNDCLOUD-URL" target="_blank" rel="noopener">SoundCloud</a>
-    </div>
+<!-- SPLASH OVERLAY — Touche Pussycat Vol 1 -->
+<div class="music-splash" id="musicSplash">
+  <div class="music-splash-inner">
+    <img src="logo.jpg" alt="Speak Easy"/>
+    <div class="eyebrow">A NEW ALBUM BY DR. NICOLE BISHOP</div>
+    <div class="title">Touché Pussycat<br/><span class="gold">Vol 1.</span></div>
+    <div class="sub">Press play to enter</div>
+    <button class="btn-play" onclick="seMusic.play()">▶ Play Music</button>
+    <button class="skip" onclick="seMusic.skip()">Continue without sound →</button>
   </div>
 </div>
+
+<!-- CORNER MUSIC WIDGET (appears after splash dismissed with play) -->
+<div class="music-widget" id="musicWidget">
+  <div class="music-widget-bar">
+    <span class="label">♪ TOUCHE PUSSYCAT · VOL 1</span>
+    <button class="close" onclick="seMusic.close()">✕</button>
+  </div>
+  <iframe
+    src="https://embed.music.apple.com/us/album/touch%C3%A9-pussycat-vol-1/1889648702"
+    allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write"
+    sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation"
+    loading="lazy"
+    title="Touché Pussycat Vol 1 on Apple Music"></iframe>
+</div>
+
+<script>
+  (function() {
+    var splash = document.getElementById('musicSplash');
+    var widget = document.getElementById('musicWidget');
+    function show(el) { el.style.display = 'flex'; requestAnimationFrame(function(){ el.style.opacity = '1'; }); }
+    function hide(el, cb) { el.style.opacity = '0'; setTimeout(function(){ el.style.display = 'none'; if(cb) cb(); }, 450); }
+    window.seMusic = {
+      play: function() { hide(splash, function(){ show(widget); }); sessionStorage.setItem('seMusicChoice', 'play'); },
+      skip: function() { hide(splash); sessionStorage.setItem('seMusicChoice', 'skip'); },
+      close: function() { hide(widget); sessionStorage.setItem('seMusicChoice', 'skip'); }
+    };
+    document.addEventListener('DOMContentLoaded', function() {
+      var choice = sessionStorage.getItem('seMusicChoice');
+      if (choice === 'play') { show(widget); }
+      else if (choice === 'skip') { /* nothing */ }
+      else { show(splash); }
+    });
+  })();
+</script>
 
 </body>
 </html>
