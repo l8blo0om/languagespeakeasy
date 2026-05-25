@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Language Speak Easy | Bring Speak Easy to Your City</title>
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="https://languagespeakeasy.com/"/>
+  <meta property="og:title" content="Language Speak Easy — Train. License. Launch."/>
+  <meta property="og:description" content="The play-based language program running in Columbia and Charlotte, now licensable. Get certified and bring Speak Easy to your city."/>
+  <meta property="og:image" content="./og-umbrella.jpg"/>
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:image" content="./og-umbrella.jpg"/>
+  <meta name="description" content="The play-based language program running in Columbia and Charlotte. Get certified — ESL track, Kids track, or both — and bring Speak Easy to your city."/>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Nunito:wght@400;600;700;800&family=Special+Elite&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --cream:   #FAF4E1;
+      --board:   #F0E6C8;
+      --dark:    #1A1A1A;
+      --night:   #0B1A0D;
+      --red:     #CC2529;
+      --green:   #2D6B3C;
+      --blue:    #1B3A6B;
+      --yellow:  #F5C518;
+      --gold:    #C9A84C;
+      --purple:  #5C2D91;
+      --orange:  #E8734A;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Nunito', sans-serif; background: var(--dark); color: var(--cream); }
+
+    /* NAV */
+    nav { background: var(--dark); display: flex; align-items: center; justify-content: space-between; padding: 0 2.5rem; height: 68px; position: sticky; top: 0; z-index: 100; border-bottom: 3px solid var(--gold); }
+    .nav-logo-wrap { display: flex; align-items: center; gap: 0.85rem; text-decoration: none; }
+    .nav-logo-img { width: 46px; height: 46px; border-radius: 6px; display: block; object-fit: cover; }
+    .nav-logo-text { font-family: 'Oswald', sans-serif; font-weight: 700; font-size: 1.2rem; color: #fff; letter-spacing: 2px; text-transform: uppercase; }
+    .nav-logo-text span { color: var(--gold); }
+    .nav-logo-text .small { display: block; font-size: 0.65rem; color: rgba(255,255,255,0.5); letter-spacing: 4px; margin-top: 2px; }
+    .nav-links { display: flex; gap: 1.75rem; list-style: none; align-items: center; }
+    .nav-links a { font-family: 'Oswald', sans-serif; font-weight: 500; font-size: 0.85rem; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(255,255,255,0.7); text-decoration: none; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--gold); }
+    .nav-cta { background: var(--gold); color: var(--dark) !important; padding: 0.5rem 1.2rem; border-radius: 3px; font-weight: 700 !important; }
+    .nav-cta:hover { background: var(--yellow); }
+
+    /* HERO */
+    .hero { position: relative; min-height: 90vh; display: flex; align-items: center; overflow: hidden; background: var(--dark); }
+    .hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 10px; background: repeating-linear-gradient(90deg, var(--red) 0 40px, var(--orange) 40px 80px, var(--yellow) 80px 120px, var(--green) 120px 160px, var(--blue) 160px 200px, var(--purple) 200px 240px); z-index: 3; }
+    .hero-bg { position: absolute; inset: 0; background: radial-gradient(ellipse at 20% 30%, rgba(245,197,24,0.06), transparent 60%), radial-gradient(ellipse at 80% 70%, rgba(204,37,41,0.05), transparent 60%); }
+    .hero-content { position: relative; z-index: 2; max-width: 1100px; margin: 0 auto; padding: 4rem 2rem; }
+    .hero-eyebrow { font-family: 'Special Elite', cursive; font-size: clamp(0.75rem, 1.5vw, 0.95rem); color: var(--gold); letter-spacing: 5px; text-transform: uppercase; margin-bottom: 1.5rem; }
+    .hero-title { font-family: 'Oswald', sans-serif; font-size: clamp(3rem, 8vw, 6.4rem); font-weight: 700; text-transform: uppercase; letter-spacing: 3px; line-height: 0.98; margin-bottom: 1.25rem; }
+    .hero-title .gold { color: var(--gold); }
+    .hero-title .yellow { color: var(--yellow); }
+    .hero-divider { width: 80px; height: 4px; background: var(--gold); margin: 1.5rem 0 1.5rem; }
+    .hero-sub { font-family: 'Special Elite', cursive; font-size: clamp(0.9rem, 2vw, 1.15rem); color: rgba(250,244,225,0.85); letter-spacing: 2px; margin-bottom: 1.5rem; text-transform: uppercase; }
+    .hero-desc { font-size: 1.15rem; line-height: 1.75; color: rgba(250,244,225,0.85); margin-bottom: 2.5rem; max-width: 640px; }
+    .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .btn { font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 0.95rem; letter-spacing: 2px; text-transform: uppercase; padding: 0.9rem 1.9rem; text-decoration: none; display: inline-block; transition: all 0.2s; border: 3px solid transparent; }
+    .btn-gold { background: var(--gold); color: var(--dark); border-color: var(--gold); }
+    .btn-gold:hover { background: var(--yellow); border-color: var(--yellow); transform: translateY(-2px); }
+    .btn-outline { background: transparent; color: var(--gold); border-color: var(--gold); }
+    .btn-outline:hover { background: rgba(201,168,76,0.1); }
+
+    /* STATS BAR */
+    .stats { background: var(--cream); color: var(--dark); padding: 2rem; border-top: 4px solid var(--gold); border-bottom: 4px solid var(--dark); }
+    .stats-row { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; text-align: center; }
+    .stat-num { font-family: 'Oswald', sans-serif; font-weight: 700; font-size: 2.5rem; color: var(--red); line-height: 1; }
+    .stat-label { font-family: 'Oswald', sans-serif; font-size: 0.7rem; letter-spacing: 3px; text-transform: uppercase; color: var(--dark); margin-top: 0.4rem; }
+
+    /* SECTIONS */
+    section { padding: 5.5rem 2rem; }
+    .section-inner { max-width: 1100px; margin: 0 auto; }
+    .section-tag { font-family: 'Oswald', sans-serif; font-size: 0.7rem; font-weight: 700; letter-spacing: 4px; text-transform: uppercase; color: var(--gold); margin-bottom: 0.75rem; }
+    h2 { font-family: 'Oswald', sans-serif; font-size: clamp(2rem, 4.5vw, 3rem); font-weight: 700; text-transform: uppercase; letter-spacing: 2px; line-height: 1.15; margin-bottom: 1.25rem; color: var(--cream); }
+    .subtitle { font-size: 1.05rem; color: rgba(250,244,225,0.75); line-height: 1.75; max-width: 680px; }
+
+    /* PLAYBOOK */
+    .playbook { background: var(--dark); }
+    .playbook-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 3rem; }
+    .pb-card { background: #222; border: 2px solid var(--gold); padding: 2rem 1.75rem; position: relative; }
+    .pb-card::before { content: attr(data-num); position: absolute; top: -1rem; left: 1.5rem; background: var(--gold); color: var(--dark); font-family: 'Oswald',sans-serif; font-weight: 700; font-size: 1.1rem; padding: 0.2rem 0.8rem; letter-spacing: 2px; }
+    .pb-card h3 { font-family: 'Oswald', sans-serif; font-size: 1.4rem; letter-spacing: 1.5px; text-transform: uppercase; margin: 0.5rem 0 0.85rem; color: var(--cream); }
+    .pb-card p { color: rgba(250,244,225,0.75); line-height: 1.7; font-size: 0.95rem; }
+
+    /* CITIES (where it's running) */
+    .cities { background: var(--cream); color: var(--dark); border-top: 6px solid var(--dark); border-bottom: 6px solid var(--dark); }
+    .cities h2 { color: var(--dark); }
+    .cities .section-tag { color: var(--red); }
+    .cities .subtitle { color: #555; }
+    .city-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 3rem; }
+    .city-card { background: #FFFEF8; border: 3px solid var(--dark); box-shadow: 8px 8px 0 var(--dark); padding: 0; overflow: hidden; transition: transform 0.2s; text-decoration: none; color: inherit; display: block; }
+    .city-card:hover { transform: translate(-3px,-3px); box-shadow: 11px 11px 0 var(--dark); }
+    .city-band { padding: 0.5rem 1rem; font-family: 'Oswald',sans-serif; font-weight: 700; font-size: 0.75rem; letter-spacing: 3px; color: #fff; text-transform: uppercase; text-align: center; }
+    .city-card.col .city-band { background: var(--red); }
+    .city-card.clt .city-band { background: var(--gold); color: var(--dark); }
+    .city-card.kids .city-band { background: var(--yellow); color: var(--dark); }
+    .city-body { padding: 1.75rem 1.5rem; }
+    .city-body h3 { font-family: 'Oswald',sans-serif; font-size: 1.55rem; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 0.5rem; line-height: 1.1; }
+    .city-body .meta { font-family: 'Special Elite',cursive; font-size: 0.8rem; color: #777; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 1rem; }
+    .city-body p { font-size: 0.95rem; line-height: 1.6; color: #444; margin-bottom: 1.25rem; }
+    .city-link { font-family: 'Oswald',sans-serif; font-size: 0.78rem; letter-spacing: 2px; color: var(--red); text-transform: uppercase; font-weight: 700; }
+
+    /* TRACKS / PRICING */
+    .tracks { background: var(--dark); }
+    .tracks-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.5rem; margin-top: 3rem; align-items: stretch; }
+    .track { background: #1f1f1f; border: 2px solid #333; padding: 2rem 1.75rem; display: flex; flex-direction: column; position: relative; }
+    .track.featured { border-color: var(--gold); background: #262320; }
+    .track.featured::before { content: "BEST VALUE"; position: absolute; top: -0.7rem; right: 1.5rem; background: var(--gold); color: var(--dark); font-family: 'Oswald',sans-serif; font-weight: 700; font-size: 0.7rem; letter-spacing: 3px; padding: 0.25rem 0.75rem; }
+    .track h3 { font-family: 'Oswald',sans-serif; font-size: 1.4rem; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 0.4rem; color: var(--cream); }
+    .track .who { font-family: 'Special Elite',cursive; font-size: 0.78rem; color: rgba(250,244,225,0.55); letter-spacing: 2px; margin-bottom: 1.5rem; text-transform: uppercase; }
+    .track .price { font-family: 'Oswald',sans-serif; font-size: 3.2rem; font-weight: 700; color: var(--gold); line-height: 1; }
+    .track .price-sub { font-size: 0.85rem; color: rgba(250,244,225,0.6); margin-bottom: 0.4rem; }
+    .track .plus { font-family: 'Oswald',sans-serif; font-size: 1.1rem; color: var(--cream); margin-top: 0.7rem; }
+    .track .plus strong { color: var(--gold); }
+    .track ul { list-style: none; margin: 1.5rem 0; padding: 0; flex: 1; }
+    .track li { font-size: 0.95rem; color: rgba(250,244,225,0.85); line-height: 1.55; padding: 0.4rem 0 0.4rem 1.5rem; position: relative; border-bottom: 1px dashed rgba(201,168,76,0.18); }
+    .track li:last-child { border-bottom: none; }
+    .track li::before { content: "■"; position: absolute; left: 0; top: 0.4rem; color: var(--gold); font-size: 0.7rem; }
+    .track .save { color: var(--yellow); font-family: 'Oswald',sans-serif; font-size: 0.8rem; letter-spacing: 2px; margin-top: 0.5rem; }
+
+    /* INCLUDES */
+    .includes { background: var(--cream); color: var(--dark); border-top: 6px solid var(--dark); border-bottom: 6px solid var(--dark); }
+    .includes h2 { color: var(--dark); }
+    .includes .section-tag { color: var(--red); }
+    .includes-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 2.5rem; }
+    .inc-item { padding: 1rem 0; border-top: 2px solid var(--dark); }
+    .inc-item .ic { font-size: 1.8rem; margin-bottom: 0.4rem; }
+    .inc-item h4 { font-family: 'Oswald',sans-serif; font-size: 1rem; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 0.35rem; }
+    .inc-item p { font-size: 0.9rem; color: #555; line-height: 1.55; }
+
+    /* FOUNDER */
+    .founder { background: var(--dark); }
+    .founder-grid { display: grid; grid-template-columns: 1fr 1.3fr; gap: 4rem; align-items: center; }
+    .founder-img { border: 4px solid var(--gold); box-shadow: 12px 12px 0 var(--gold); aspect-ratio: 4/5; overflow: hidden; max-width: 380px; }
+    .founder-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .founder p { font-size: 1.02rem; color: rgba(250,244,225,0.85); line-height: 1.75; margin-bottom: 1rem; }
+    .credentials { background: #FFFEF8; color: var(--dark); margin-top: 1.5rem; padding: 1.5rem 1.75rem; border: 2px solid var(--gold); position: relative; }
+    .credentials::before { content: "TITLE DEED"; position: absolute; top: -0.7rem; left: 50%; transform: translateX(-50%); background: var(--red); color: #fff; font-family: 'Oswald',sans-serif; font-size: 0.65rem; letter-spacing: 4px; padding: 0.25rem 0.85rem; font-weight: 700; }
+    .cred-line { padding: 0.4rem 0; border-bottom: 1px dashed rgba(0,0,0,0.15); font-size: 0.92rem; line-height: 1.4; }
+    .cred-line:last-of-type { border-bottom: none; }
+    .cred-line strong { font-family: 'Oswald',sans-serif; letter-spacing: 1.5px; color: var(--red); margin-right: 0.6rem; min-width: 3rem; display: inline-block; }
+    .cred-since { font-family: 'Oswald',sans-serif; font-size: 0.8rem; letter-spacing: 3px; color: var(--red); margin-top: 0.85rem; text-align: center; padding-top: 0.85rem; border-top: 2px solid var(--dark); font-weight: 700; text-transform: uppercase; }
+
+    /* FAQ */
+    .faq { background: var(--cream); color: var(--dark); border-top: 6px solid var(--dark); }
+    .faq h2 { color: var(--dark); }
+    .faq .section-tag { color: var(--red); }
+    .faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem 2.25rem; margin-top: 2.5rem; }
+    .faq-q { font-family: 'Oswald',sans-serif; font-size: 1rem; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 0.4rem; }
+    .faq-a { font-size: 0.95rem; color: #444; line-height: 1.7; }
+
+    /* FINAL CTA */
+    .final { background: var(--gold); color: var(--dark); text-align: center; padding: 5rem 2rem; }
+    .final h2 { color: var(--dark); }
+    .final p { max-width: 600px; margin: 1rem auto 2rem; line-height: 1.7; font-size: 1.05rem; color: var(--dark); }
+    .final .btn-dark { background: var(--dark); color: var(--gold); border-color: var(--dark); }
+    .final .btn-dark:hover { background: var(--night); }
+
+    /* FOOTER */
+    footer { background: #000; color: rgba(255,255,255,0.5); padding: 3rem 2rem; text-align: center; font-size: 0.88rem; line-height: 1.7; }
+    footer .ft-brand { font-family: 'Oswald',sans-serif; font-weight: 700; font-size: 1.1rem; color: #fff; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 0.6rem; }
+    footer .ft-brand span { color: var(--gold); }
+    footer a { color: var(--gold); text-decoration: none; }
+    footer .ft-row { display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; margin: 1rem 0; }
+
+    @media (max-width: 900px) {
+      nav { padding: 0 1.25rem; height: 60px; }
+      .nav-links { display: none; }
+      .stats-row { grid-template-columns: repeat(2, 1fr); }
+      .playbook-grid, .city-grid, .tracks-grid, .includes-grid { grid-template-columns: 1fr; }
+      .founder-grid, .faq-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .founder-img { max-width: 100%; margin: 0 auto; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo-wrap">
+    <img src="logo.jpg" alt="Speak Easy" class="nav-logo-img"/>
+    <div class="nav-logo-text">Speak <span>Easy</span><span class="small">THE PLAYBOOK</span></div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#cities">Cities</a></li>
+    <li><a href="#playbook">How It Works</a></li>
+    <li><a href="#tracks">Certification</a></li>
+    <li><a href="#founder">About</a></li>
+    <li><a href="pitch.pdf" target="_blank">Pitch</a></li>
+    <li><a href="https://calendly.com/CALENDLY-LINK-HERE" target="_blank" rel="noopener" class="nav-cta">Apply</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">THE PLAYBOOK · TRAIN · LICENSE · LAUNCH</div>
+    <h1 class="hero-title">SPEAK EASY.<br/><span class="gold">ANYWHERE.</span></h1>
+    <div class="hero-divider"></div>
+    <div class="hero-sub">Three cities. Two tracks. One method.</div>
+    <p class="hero-desc">Speak Easy is the play-based language program already running in Columbia and Charlotte. Adults learn English in bars over games and drinks. Kids learn Spanish afterschool through songs, parachutes, and piñatas. Now we're licensing the playbook so you can run it in your city.</p>
+    <div class="hero-btns">
+      <a href="#tracks" class="btn btn-gold">See the Tracks</a>
+      <a href="https://calendly.com/CALENDLY-LINK-HERE" target="_blank" rel="noopener" class="btn btn-outline">Book a Call</a>
+    </div>
+  </div>
+</section>
+
+<!-- STATS BAR -->
+<div class="stats">
+  <div class="stats-row">
+    <div><div class="stat-num">3</div><div class="stat-label">Cities Live</div></div>
+    <div><div class="stat-num">2</div><div class="stat-label">Tracks</div></div>
+    <div><div class="stat-num">30+</div><div class="stat-label">Years Teaching</div></div>
+    <div><div class="stat-num">PhD</div><div class="stat-label">U of Michigan</div></div>
+  </div>
+</div>
+
+<!-- CITIES -->
+<section class="cities" id="cities">
+  <div class="section-inner">
+    <div class="section-tag">Already Running</div>
+    <h2>Three rooms. Same playbook.</h2>
+    <p class="subtitle">Speak Easy isn't theoretical. It's running every week in two cities and one afterschool program. Here's what each room looks like.</p>
+    <div class="city-grid">
+      <a href="https://speakeasycolumbia.com" target="_blank" rel="noopener" class="city-card col">
+        <div class="city-band">Adult ESL · LIVE</div>
+        <div class="city-body">
+          <h3>Speak Easy Columbia</h3>
+          <div class="meta">Tue · Thu · Sat · 6:30 PM</div>
+          <p>Spanish speakers learning English at a bar near Columbia College. Drinks, games, Speak Easy Dollars. Mixed levels. Drop-in pricing.</p>
+          <span class="city-link">Visit Site →</span>
+        </div>
+      </a>
+      <a href="https://speakeasyclt.com" target="_blank" rel="noopener" class="city-card clt">
+        <div class="city-band">Adult ESL · LIVE</div>
+        <div class="city-body">
+          <h3>Speak Easy Charlotte</h3>
+          <div class="meta">Wed · Fri · 6–8 PM</div>
+          <p>Happy-hour Spanglish at two rotating Charlotte bar venues. Same playbook as Columbia, after-work edition. Drink discount included.</p>
+          <span class="city-link">Visit Site →</span>
+        </div>
+      </a>
+      <a href="https://speakeasy4kids.com" target="_blank" rel="noopener" class="city-card kids">
+        <div class="city-band">K–5 Spanish · PILOTING</div>
+        <div class="city-body">
+          <h3>Speak Easy Kids</h3>
+          <div class="meta">8-Week Afterschool · K–5</div>
+          <p>Play-based Spanish for kids. 6 rotating sessions, breathing techniques, parachute games, piñatas, finale showcase. Schools or in-home.</p>
+          <span class="city-link">Visit Site →</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- PLAYBOOK -->
+<section class="playbook" id="playbook">
+  <div class="section-inner">
+    <div class="section-tag">How It Works</div>
+    <h2>Train. License. Launch.</h2>
+    <p class="subtitle">Three steps from "I want to do this" to "my first class is on the calendar." About 6 weeks total, including a live practicum session with Dr. Bishop.</p>
+    <div class="playbook-grid">
+      <div class="pb-card" data-num="01">
+        <h3>Train</h3>
+        <p>Self-paced online certification course (~10 hours): the method, the games, the Speak Easy Dollars economy, classroom regulation, the full 6-session Kids curriculum or the adult bar playbook. Ends with a 1:1 practicum on Zoom.</p>
+      </div>
+      <div class="pb-card" data-num="02">
+        <h3>License</h3>
+        <p>Once you pass practicum, you're a Certified Speak Easy Instructor. You get the trademark license, the full materials library, your directory listing, marketing assets, and access to the instructor network.</p>
+      </div>
+      <div class="pb-card" data-num="03">
+        <h3>Launch</h3>
+        <p>Pitch the bar / pitch the school / pitch the PTA. We give you the deck, the flyer template, the email scripts, the pricing model. First class within 30 days of certification. Keep 100% of your class revenue.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRACKS / PRICING -->
+<section class="tracks" id="tracks">
+  <div class="section-inner">
+    <div class="section-tag">Choose Your Track</div>
+    <h2>Pick one. Or both.</h2>
+    <p class="subtitle">Adult ESL bars and K–5 Spanish afterschool are two different rooms with different rhythms. Get certified in one, or take both and double your reach.</p>
+
+    <div class="tracks-grid">
+
+      <!-- ESL TRACK -->
+      <div class="track">
+        <h3>ESL Track</h3>
+        <div class="who">Adult bar nights · Columbia + Charlotte model</div>
+        <div class="price">$299</div>
+        <div class="price-sub">one-time certification</div>
+        <div class="plus">+ <strong>$35/mo</strong> network membership</div>
+        <ul>
+          <li>Full adult bar program playbook</li>
+          <li>Games: Pictionary, Hot Seat, Fishbowl, Talking Stick</li>
+          <li>Speak Easy Dollars print files + economy rules</li>
+          <li>Bar pitch deck (template) + revenue-share scripts</li>
+          <li>Marketing kit: OG images, flyers, social posts</li>
+          <li>Monthly instructor Q&amp;A with Dr. Bishop</li>
+          <li>Listed in the Speak Easy instructor directory</li>
+        </ul>
+        <a href="https://calendly.com/CALENDLY-LINK-HERE" target="_blank" rel="noopener" class="btn btn-outline">Apply for ESL Track</a>
+      </div>
+
+      <!-- BOTH (featured) -->
+      <div class="track featured">
+        <h3>Both Tracks</h3>
+        <div class="who">Maximum reach · ESL + Kids combined</div>
+        <div class="price">$500</div>
+        <div class="price-sub">one-time certification</div>
+        <div class="plus">+ <strong>$50/mo</strong> network membership</div>
+        <ul>
+          <li>Everything in ESL Track</li>
+          <li>Everything in Kids Track</li>
+          <li>Both directory listings</li>
+          <li>Two practicum sessions (one per track)</li>
+          <li>Cross-promotion across both audiences</li>
+        </ul>
+        <div class="save">SAVE $98 ON CERT · $20/MO ON MEMBERSHIP</div>
+        <a href="https://calendly.com/CALENDLY-LINK-HERE" target="_blank" rel="noopener" class="btn btn-gold" style="margin-top:0.85rem;">Apply for Both</a>
+      </div>
+
+      <!-- KIDS TRACK -->
+      <div class="track">
+        <h3>Kids Track</h3>
+        <div class="who">K–5 afterschool · Speak Easy Kids model</div>
+        <div class="price">$299</div>
+        <div class="price-sub">one-time certification</div>
+        <div class="plus">+ <strong>$35/mo</strong> network membership</div>
+        <ul>
+          <li>Full 6-session rotating Kids curriculum</li>
+          <li>All 36 lesson plans + take-home sheets</li>
+          <li>Breathing &amp; regulation toolkits per session</li>
+          <li>Parachute, piñata, embodied-learning scripts</li>
+          <li>School pitch deck + parent flyer templates</li>
+          <li>Monthly instructor Q&amp;A with Dr. Bishop</li>
+          <li>Listed in the Speak Easy instructor directory</li>
+        </ul>
+        <a href="https://calendly.com/CALENDLY-LINK-HERE" target="_blank" rel="noopener" class="btn btn-outline">Apply for Kids Track</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- INCLUDES -->
+<section class="includes">
+  <div class="section-inner">
+    <div class="section-tag">What You Actually Get</div>
+    <h2>This isn't a PDF and a pep talk.</h2>
+    <p class="subtitle">Every certified instructor gets the same operational stack we use to run Columbia, Charlotte, and Kids.</p>
+    <div class="includes-grid">
+      <div class="inc-item"><div class="ic">📘</div><h4>The Method</h4><p>Step-by-step playbook for running a class: opening rituals, game flow, Speak Easy Dollars economy, closing ritual.</p></div>
+      <div class="inc-item"><div class="ic">🎲</div><h4>The Games</h4><p>Every game we run, with rules, vocabulary scaffolding, and Speak Easy Dollars earn/spend bars. Print-ready.</p></div>
+      <div class="inc-item"><div class="ic">💵</div><h4>Speak Easy Dollars</h4><p>Branded print files for the in-class currency. Bills, vault, ledger. The economy that makes the room work.</p></div>
+      <div class="inc-item"><div class="ic">🎨</div><h4>Marketing Kit</h4><p>Logo, OG images, flyers, social posts, pitch deck templates. Your launch materials, ready to customize.</p></div>
+      <div class="inc-item"><div class="ic">🎓</div><h4>Live Practicum</h4><p>1:1 Zoom with Dr. Bishop. You run a mock class segment, she gives notes. You don't pass until you can run a room.</p></div>
+      <div class="inc-item"><div class="ic">🤝</div><h4>The Network</h4><p>Monthly Q&amp;A, private channel with other certified instructors, new curriculum releases as they drop.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- FOUNDER -->
+<section class="founder" id="founder">
+  <div class="section-inner founder-grid">
+    <div class="founder-img"><img src="founder.jpg" alt="Dr. Nicole Bishop, founder of Speak Easy"/></div>
+    <div>
+      <div class="section-tag">The Founder</div>
+      <h2>This was built by a teacher.</h2>
+      <p>I'm Dr. Nicole Bishop. I've been teaching language since 1996 — public schools, universities, community programs. I built Speak Easy because every language program I'd ever seen was either too cold for adults to stick with or too corny for kids to come back to.</p>
+      <p>It's running in Columbia and Charlotte now, and the Kids program is piloting this fall. If you're a teacher, a bilingual professional, or an entrepreneur who's tired of curriculum that doesn't translate to real conversation — let's talk. I'll certify you myself.</p>
+      <div class="credentials">
+        <p class="cred-line"><strong>PhD</strong>Comparative Literature — University of Michigan</p>
+        <p class="cred-line"><strong>MA</strong>Comparative Literature · Graduate Certificate in Women's Studies</p>
+        <p class="cred-line"><strong>BA</strong>English &amp; French — Amherst College</p>
+        <p class="cred-since">Educator since 1996</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq" id="faq">
+  <div class="section-inner">
+    <div class="section-tag">FAQ</div>
+    <h2>The questions everyone asks first.</h2>
+    <div class="faq-grid">
+      <div><div class="faq-q">Do I have to speak Spanish to run Kids?</div><div class="faq-a">Yes. Conversational Spanish is enough — you don't need to be a native speaker, but you need to deliver the vocabulary correctly. We screen for this in the practicum.</div></div>
+      <div><div class="faq-q">Do I have to own a bar / work at a school?</div><div class="faq-a">No. Most instructors partner with venues. We give you the pitch templates for bars (revenue share, no rent) and schools (turnkey afterschool pitch + PTA outreach).</div></div>
+      <div><div class="faq-q">How much can I make?</div><div class="faq-a">Highly variable. Columbia runs ~$3K/month at one location. Kids at a school is ~$1,500/session per cohort. You keep 100% of your class revenue — Speak Easy makes money on certification + membership, not your classes.</div></div>
+      <div><div class="faq-q">Is this a franchise?</div><div class="faq-a">No. It's a certification + brand license, structured like the Zumba instructor model. No FDD, no per-state filings, no royalties on your class revenue.</div></div>
+      <div><div class="faq-q">What if I want to cancel?</div><div class="faq-a">Membership is month-to-month. Cancel anytime — you keep the certification and the materials you've already downloaded. You just lose new releases and directory listing.</div></div>
+      <div><div class="faq-q">How long does certification take?</div><div class="faq-a">About 4–6 weeks at part-time pace. ~10 hours of self-paced video, plus the 1:1 practicum which we schedule when you're ready.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final">
+  <h2>Bring Speak Easy to Your City.</h2>
+  <p>You'd be the first instructor outside of Columbia or Charlotte. We're looking for people who can hold a room — teachers, language tutors, community organizers, bilingual professionals. Book a 20-minute call and we'll see if it's a fit.</p>
+  <a href="https://calendly.com/CALENDLY-LINK-HERE" target="_blank" rel="noopener" class="btn btn-dark">📅 Book a Call</a>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="ft-brand">Speak <span>Easy</span></div>
+  <div>The play-based language program. Built by Dr. Nicole Bishop.</div>
+  <div class="ft-row">
+    <a href="https://speakeasycolumbia.com">Columbia</a>
+    <a href="https://speakeasyclt.com">Charlotte</a>
+    <a href="https://speakeasy4kids.com">Kids</a>
+    <a href="pitch.pdf" target="_blank">Pitch Deck</a>
+    <a href="https://calendly.com/CALENDLY-LINK-HERE" target="_blank" rel="noopener">Book a Call</a>
+  </div>
+  <div style="margin-top:1rem;font-size:0.78rem;color:rgba(255,255,255,0.3);">© Speak Easy · languagespeakeasy.com</div>
+</footer>
+
+</body>
+</html>
