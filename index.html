@@ -245,7 +245,49 @@
     .visit-counter #vc { color: rgba(255,255,255,0.65); font-weight: 700; }
     .visit-counter #vc.empty { opacity: 0.5; }
 
-  </style>
+  
+    /* ── HUE-CYCLING UTILITIES (premium gold-adjacent glow) ── */
+    .btn-glow {
+      background: #0a0a0a; color: #fff; border: none;
+      padding: 1.05rem 2.2rem; cursor: pointer;
+      font-family: 'Oswald', sans-serif; font-weight: 700;
+      font-size: 1rem; letter-spacing: 2.5px; text-transform: uppercase;
+      text-decoration: none; display: inline-block;
+      box-shadow: 0 0 0 1.5px hsl(var(--hue) 85% 60%), 0 0 22px hsl(var(--hue) 85% 60% / .3);
+      animation: breathe 3s ease-in-out infinite;
+      transition: background 0.2s, color 0.2s;
+    }
+    .btn-glow:hover { background: hsl(var(--hue) 85% 60%); color: #0a0a0a; }
+    @keyframes breathe {
+      0%,100% { box-shadow: 0 0 0 1.5px hsl(var(--hue) 85% 60%), 0 0 18px hsl(var(--hue) 85% 60% / .25); }
+      50%     { box-shadow: 0 0 0 1.5px hsl(var(--hue) 85% 60%), 0 0 32px hsl(var(--hue) 85% 60% / .5); }
+    }
+    .glow-line {
+      border-bottom: 2px solid transparent;
+      border-image: linear-gradient(90deg, hsl(var(--hue) 85% 60%), hsl(calc(var(--hue) + 60) 85% 60%), hsl(var(--hue) 85% 60%)) 1;
+    }
+    .accent { color: hsl(var(--hue) 85% 62%); }
+
+  
+/* glowing outlined button that breathes */
+.btn-glow{
+  background:#0a0a0a;color:#fff;border:none;padding:15px 28px;cursor:pointer;
+  box-shadow:0 0 0 1.5px hsl(var(--hue) 90% 60%), 0 0 22px hsl(var(--hue) 90% 58% / .3);
+  animation:breathe 3s ease-in-out infinite;
+}
+.btn-glow:hover{background:hsl(var(--hue) 90% 58%);color:#0a0a0a}
+@keyframes breathe{
+  0%,100%{box-shadow:0 0 0 1.5px hsl(var(--hue) 90% 60%), 0 0 18px hsl(var(--hue) 90% 58% / .25)}
+  50%   {box-shadow:0 0 0 1.5px hsl(var(--hue) 90% 60%), 0 0 32px hsl(var(--hue) 90% 58% / .5)}
+}
+
+/* glowing hairline (like the header border) */
+.glow-line{border-bottom:2px solid transparent;
+  border-image:linear-gradient(90deg,hsl(var(--hue) 90% 60%),hsl(calc(var(--hue) + 60) 90% 60%),hsl(var(--hue) 90% 60%)) 1}
+
+/* accent text (eyebrows, highlights) */
+.accent{color:hsl(var(--hue) 90% 62%)}
+</style>
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -396,7 +438,7 @@
   <div class="hero-content">
     <div class="hero-eyebrow">TEACH SPEAK EASY · IN YOUR CITY · MAKE MONEY</div>
     <h1 class="hero-title">SPEAK EASY.<br/><span class="gold">MAKE MONEY.</span></h1>
-    <div class="hero-divider"></div>
+    <div class="hero-divider glow-line"></div>
     <div class="hero-sub">Our method. Your neighborhood. No charisma required.</div>
     <p class="hero-desc">You don't have to be a stand-up comedian. You don't have to be a TikTok star. You don't even need a big personality. Speak Easy is the method that does the work — the games, the Speak Easy Dollars, the rituals carry the room. We certify you, give you the full playbook, and you teach in your city. Bars, schools, community spaces — anywhere people are tired of staring at apps. Language gets <em>played</em>, not studied. And you get paid.</p>
     <div class="hero-btns">
@@ -679,7 +721,7 @@
 <section class="final">
   <h2>Bring Speak Easy to Your City.</h2>
   <p>You'd be the first instructor outside of Columbia or Charlotte. We're looking for people who can hold a room — teachers, language tutors, community organizers, bilingual professionals. Book a 20-minute call and we'll see if it's a fit.</p>
-  <a href="https://calendly.com/l8blo0om" target="_blank" rel="noopener" class="btn btn-dark">📅 Book a Call</a>
+  <a href="https://calendly.com/l8blo0om" target="_blank" rel="noopener" class="btn-glow">📅 Book a Call</a>
 </section>
 
 <!-- FOOTER -->
