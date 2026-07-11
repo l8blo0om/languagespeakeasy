@@ -228,6 +228,23 @@
     .spotify-band .cap { font-family: 'Oswald',sans-serif; font-size: 0.72rem; letter-spacing: 3px; color: var(--gold); text-transform: uppercase; margin-bottom: 0.85rem; font-weight: 700; }
     .spotify-band iframe { width: 100%; height: 80px; border: 0; border-radius: 12px; display: block; background: #000; }
 
+  
+    /* Tiny visit counter (bottom of footer) */
+    .visit-counter {
+      display: inline-block;
+      margin-top: 0.85rem;
+      font-family: 'Courier New', ui-monospace, monospace;
+      font-size: 0.72rem;
+      letter-spacing: 1.5px;
+      color: rgba(255,255,255,0.35);
+      background: rgba(255,255,255,0.05);
+      padding: 0.3rem 0.7rem;
+      border: 1px dashed rgba(255,255,255,0.15);
+      border-radius: 3px;
+    }
+    .visit-counter #vc { color: rgba(255,255,255,0.65); font-weight: 700; }
+    .visit-counter #vc.empty { opacity: 0.5; }
+
   </style>
   <script type="application/ld+json">
 {
@@ -690,6 +707,7 @@
     <a href="https://calendly.com/l8blo0om" target="_blank" rel="noopener">Book a Call</a>
   </div>
   <div style="margin-top:1rem;font-size:0.78rem;color:rgba(255,255,255,0.3);">© Speak Easy · languagespeakeasy.com</div>
+  <div style="margin-top:0.5rem;"><span class="visit-counter">VISITS · <span id="vc">…</span></span></div>
 </footer>
 
 <!-- WELCOME SPLASH -->
@@ -713,5 +731,23 @@
 })();
 </script>
 
+
+<script>
+(function(){
+  var el = document.getElementById('vc');
+  if (!el) return;
+  fetch('https://api.counterapi.dev/v1/speakeasy/speakeasy-language/up')
+    .then(function(r){ return r.json(); })
+    .then(function(d){
+      var n = (d && (d.count != null ? d.count : d.up_count));
+      if (typeof n === 'number') {
+        el.textContent = n.toLocaleString();
+      } else {
+        el.classList.add('empty'); el.textContent = '—';
+      }
+    })
+    .catch(function(){ el.classList.add('empty'); el.textContent = '—'; });
+})();
+</script>
 </body>
 </html>
