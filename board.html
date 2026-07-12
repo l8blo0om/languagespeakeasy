@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Speak Easy · The Board</title>
+<meta name="description" content="Speak Easy runs in four places: Columbia, Charlotte, K–5 afterschool, and the certification hub. Pick your property."/>
+<meta property="og:type" content="website"/>
+<meta property="og:title" content="Speak Easy · The Board"/>
+<meta property="og:description" content="Four properties. One method. Pick your door."/>
+<meta property="og:image" content="./og-umbrella.jpg"/>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Nunito:wght@400;600;700;800&family=Special+Elite&display=swap" rel="stylesheet"/>
+<style>
+  *,*::before,*::after { box-sizing: border-box; margin:0; padding:0; }
+  :root {
+    --board:   #F0E6C8;
+    --cream:   #FAF4E1;
+    --dark:    #1A1A1A;
+    --paper:   #FFFEF8;
+    --red:     #CC2529;
+    --orange:  #E8734A;
+    --gold:    #C9A84C;
+    --yellow:  #F5C518;
+    --green:   #2D6B3C;
+    --blue:    #1B3A6B;
+    --purple:  #5C2D91;
+    --mint:    #A8D5C8;
+  }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Nunito', sans-serif;
+    background: var(--board);
+    color: var(--dark);
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+  }
+
+  /* ── MONOPOLY BOARD BORDER STRIP (top + bottom rainbow) ── */
+  body::before, body::after {
+    content: '';
+    position: fixed;
+    left: 0; right: 0;
+    height: 14px;
+    background: repeating-linear-gradient(90deg,
+      var(--red)    0 60px,
+      var(--orange) 60px 120px,
+      var(--yellow) 120px 180px,
+      var(--green)  180px 240px,
+      var(--blue)   240px 300px,
+      var(--purple) 300px 360px);
+    z-index: 3;
+  }
+  body::before { top: 0; }
+  body::after  { bottom: 0; }
+
+  /* ── HEADER ── */
+  header {
+    text-align: center;
+    padding: 4.5rem 2rem 2.5rem;
+    position: relative;
+  }
+  header .eyebrow {
+    font-family: 'Special Elite', cursive;
+    font-size: 0.78rem; letter-spacing: 5px;
+    color: var(--red); text-transform: uppercase;
+    margin-bottom: 1rem;
+  }
+  header h1 {
+    font-family: 'Oswald', sans-serif;
+    font-size: clamp(3rem, 8vw, 5.5rem);
+    font-weight: 700; text-transform: uppercase;
+    letter-spacing: 4px; line-height: 0.95;
+    color: var(--dark); margin-bottom: 0.65rem;
+  }
+  header .sub {
+    font-family: 'Special Elite', cursive;
+    font-size: clamp(0.9rem, 2vw, 1.05rem);
+    letter-spacing: 3px; text-transform: uppercase;
+    color: var(--dark);
+    max-width: 480px; margin: 0 auto;
+  }
+  header .divider {
+    width: 100px; height: 3px;
+    background: var(--dark);
+    margin: 1.5rem auto 0;
+  }
+
+  /* ── BOARD (four properties) ── */
+  .board {
+    max-width: 1100px;
+    margin: 2rem auto 3rem;
+    padding: 0 2rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+  @media (max-width: 720px) {
+    .board { grid-template-columns: 1fr; gap: 1.5rem; padding: 0 1.25rem; }
+  }
+
+  /* ── PROPERTY CARD (Title Deed) ── */
+  .property {
+    background: var(--paper);
+    border: 3px solid var(--dark);
+    box-shadow: 10px 10px 0 var(--dark);
+    text-decoration: none;
+    color: var(--dark);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    transition: transform 0.15s, box-shadow 0.15s;
+    overflow: hidden;
+  }
+  .property:hover {
+    transform: translate(-4px, -4px);
+    box-shadow: 14px 14px 0 var(--dark);
+  }
+  .property .band {
+    padding: 1.1rem 1rem 0.85rem;
+    border-bottom: 3px solid var(--dark);
+    text-align: center;
+  }
+  .property .deed-chip {
+    display: inline-block;
+    background: var(--dark);
+    font-family: 'Oswald', sans-serif;
+    font-size: 0.62rem; letter-spacing: 5px;
+    padding: 0.28rem 0.85rem;
+    margin-bottom: 0.65rem;
+    font-weight: 700;
+  }
+  .property .name {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.5rem; font-weight: 700;
+    letter-spacing: 1.5px; text-transform: uppercase;
+    line-height: 1.15;
+  }
+  .property .sub-line {
+    font-family: 'Special Elite', cursive;
+    font-size: 0.72rem; letter-spacing: 2.5px;
+    text-transform: uppercase;
+    margin-top: 0.5rem;
+    opacity: 0.85;
+  }
+  .property .body {
+    padding: 1.5rem 1.75rem 1.35rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .property .tagline {
+    font-family: 'Special Elite', cursive;
+    font-size: 1rem; line-height: 1.4;
+    font-style: italic;
+    text-align: center;
+    margin-bottom: 1.25rem;
+    color: var(--dark);
+  }
+  .property .meta {
+    border-top: 2px solid var(--dark);
+    margin-bottom: 1.5rem;
+  }
+  .property .meta-row {
+    display: flex; justify-content: space-between;
+    padding: 0.4rem 0.4rem;
+    border-bottom: 1px dashed rgba(0,0,0,0.2);
+    font-size: 0.75rem;
+  }
+  .property .meta-row:last-child { border-bottom: 2px solid var(--dark); }
+  .property .k {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700; letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+  .property .v {
+    font-family: 'Special Elite', cursive;
+    letter-spacing: 1px; text-transform: uppercase;
+    color: #444;
+  }
+  .property .enter {
+    background: var(--dark);
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    font-size: 0.85rem; letter-spacing: 3px;
+    text-transform: uppercase;
+    padding: 0.85rem 1rem;
+    text-align: center;
+    transition: background 0.15s;
+  }
+
+  /* Per-property color themes */
+  .property.columbia .band  { background: var(--red);    color: var(--cream); }
+  .property.columbia .deed-chip { color: var(--red); }
+  .property.columbia .enter { color: var(--red); }
+  .property.columbia:hover .enter { background: var(--red); color: var(--dark); }
+
+  .property.charlotte .band { background: var(--gold);   color: var(--dark); }
+  .property.charlotte .deed-chip { color: var(--gold); }
+  .property.charlotte .enter { color: var(--gold); }
+  .property.charlotte:hover .enter { background: var(--gold); color: var(--dark); }
+
+  .property.kids .band      { background: var(--yellow); color: var(--dark); }
+  .property.kids .deed-chip { color: var(--yellow); }
+  .property.kids .enter { color: var(--yellow); }
+  .property.kids:hover .enter { background: var(--yellow); color: var(--dark); }
+
+  .property.course .band    { background: var(--mint);   color: var(--dark); }
+  .property.course .deed-chip { color: var(--mint); }
+  .property.course .enter { color: var(--mint); }
+  .property.course:hover .enter { background: var(--mint); color: var(--dark); }
+
+  /* Corner brackets (Monopoly card feel) */
+  .property::before, .property::after {
+    content: ''; position: absolute; width: 22px; height: 22px;
+    border: 2px solid var(--dark);
+  }
+  .property::before { top: 6px; left: 6px; border-right: none; border-bottom: none; }
+  .property::after  { bottom: 6px; right: 6px; border-left: none; border-top: none; }
+
+  /* ── FOOTER ── */
+  footer {
+    text-align: center;
+    padding: 2rem 1.5rem 3rem;
+    color: var(--dark);
+    font-family: 'Special Elite', cursive;
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+  footer .brand {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1rem; font-weight: 700;
+    letter-spacing: 3px;
+    margin-bottom: 0.5rem;
+  }
+  footer a {
+    color: var(--dark); text-decoration: underline;
+    text-underline-offset: 4px;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="eyebrow">Est. 1996 · Presents</div>
+  <h1>Speak Easy</h1>
+  <div class="sub">Four properties · one method · pick your door</div>
+  <div class="divider"></div>
+</header>
+
+<main class="board">
+
+  <!-- COLUMBIA -->
+  <a class="property columbia" href="https://speakeasycolumbia.com" target="_blank" rel="noopener">
+    <div class="band">
+      <div class="deed-chip">TITLE DEED</div>
+      <div class="name">Speak Easy<br/>Columbia</div>
+      <div class="sub-line">The · Columbia · SC · Property</div>
+    </div>
+    <div class="body">
+      <div class="tagline">Language played, not studied.</div>
+      <div class="meta">
+        <div class="meta-row"><span class="k">Nights</span><span class="v">Tue · Thu · Sat</span></div>
+        <div class="meta-row"><span class="k">Time</span><span class="v">6:30 PM</span></div>
+        <div class="meta-row"><span class="k">First</span><span class="v">$10 to play</span></div>
+      </div>
+      <div class="enter">▸ Enter Columbia</div>
+    </div>
+  </a>
+
+  <!-- CHARLOTTE -->
+  <a class="property charlotte" href="https://speakeasyclt.com" target="_blank" rel="noopener">
+    <div class="band">
+      <div class="deed-chip">TITLE DEED</div>
+      <div class="name">Speak Easy<br/>Charlotte</div>
+      <div class="sub-line">The · Charlotte · NC · Property</div>
+    </div>
+    <div class="body">
+      <div class="tagline">Better than another night on the couch.</div>
+      <div class="meta">
+        <div class="meta-row"><span class="k">Nights</span><span class="v">Wed · Fri</span></div>
+        <div class="meta-row"><span class="k">Time</span><span class="v">6 – 8 PM</span></div>
+        <div class="meta-row"><span class="k">First</span><span class="v">Free first night</span></div>
+      </div>
+      <div class="enter">▸ Enter Charlotte</div>
+    </div>
+  </a>
+
+  <!-- KIDS -->
+  <a class="property kids" href="https://speakeasy4kids.com" target="_blank" rel="noopener">
+    <div class="band">
+      <div class="deed-chip">TITLE DEED</div>
+      <div class="name">Speak Easy<br/>4 Kids</div>
+      <div class="sub-line">The · K–5 · Afterschool · Property</div>
+    </div>
+    <div class="body">
+      <div class="tagline">Spanish that feels like recess.</div>
+      <div class="meta">
+        <div class="meta-row"><span class="k">Grades</span><span class="v">K – 5 mixed</span></div>
+        <div class="meta-row"><span class="k">Length</span><span class="v">8-week session</span></div>
+        <div class="meta-row"><span class="k">Start</span><span class="v">$129 at school</span></div>
+      </div>
+      <div class="enter">▸ Enter Speak Easy 4 Kids</div>
+    </div>
+  </a>
+
+  <!-- COURSE / LANGUAGE -->
+  <a class="property course" href="https://languagespeakeasy.com" target="_blank" rel="noopener">
+    <div class="band">
+      <div class="deed-chip">TITLE DEED</div>
+      <div class="name">The Course<br/>· Teach It ·</div>
+      <div class="sub-line">The · Method · Property</div>
+    </div>
+    <div class="body">
+      <div class="tagline">Teach the method. Get paid.</div>
+      <div class="meta">
+        <div class="meta-row"><span class="k">Tracks</span><span class="v">ESL · Kids · Both</span></div>
+        <div class="meta-row"><span class="k">Cert</span><span class="v">$299 per track</span></div>
+        <div class="meta-row"><span class="k">Network</span><span class="v">$35 / month</span></div>
+      </div>
+      <div class="enter">▸ Get Certified</div>
+    </div>
+  </a>
+
+</main>
+
+<footer>
+  <div class="brand">Speak Easy · Est. 1996</div>
+  <div>Built by Dr. Nicole Bishop · <a href="https://languagespeakeasy.com">languagespeakeasy.com</a></div>
+</footer>
+
+</body>
+</html>
