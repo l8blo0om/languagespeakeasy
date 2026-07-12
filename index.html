@@ -31,7 +31,73 @@
     --darkblue: #0072BB;
   }
   html { scroll-behavior:smooth; }
-  body { font-family:'Nunito',sans-serif; background:var(--board); color:var(--dark); min-height:100vh; padding:14px 0; }
+  body { font-family:'Nunito',sans-serif; background:var(--board); color:var(--dark); min-height:100vh; padding:14px 0; position:relative; }
+
+  /* ─── VIDEO BACKGROUND LAYER ─── */
+  .bg-video {
+    position:fixed; inset:0;
+    width:100vw; height:100vh;
+    object-fit:cover;
+    z-index:0;
+    opacity:0.35;                    /* dim so the board stays legible */
+    pointer-events:none;
+  }
+  /* warm cream overlay tinting the video toward the board palette */
+  .bg-video-tint {
+    position:fixed; inset:0;
+    background: radial-gradient(ellipse at center,
+      rgba(240,230,200,0.55) 0%,
+      rgba(240,230,200,0.85) 60%,
+      rgba(240,230,200,0.95) 100%);
+    z-index:1;
+    pointer-events:none;
+  }
+  /* everything else sits above the video */
+  header, main, .franchise, footer { position:relative; z-index:2; }
+
+  /* ─── HUE-CYCLE ENGINE (cycles through the 6 Monopoly property hues) ─── */
+  @property --hue {
+    syntax: '<number>';
+    inherits: true;
+    initial-value: 0;
+  }
+  @keyframes huecycle {
+    0%   { --hue: 0;   } /* red    — Columbia */
+    18%  { --hue: 30;  } /* orange — Kids     */
+    35%  { --hue: 55;  } /* yellow — board    */
+    55%  { --hue: 130; } /* green  — Course   */
+    75%  { --hue: 210; } /* blue   — Charlotte*/
+    92%  { --hue: 320; } /* magenta — pink    */
+    100% { --hue: 360; }
+  }
+  :root { animation: huecycle 22s linear infinite; }
+
+  /* ─── GLOW UTILITIES ─── */
+  .btn-glow {
+    background:#0a0a0a; color:#fff; border:none;
+    padding:15px 28px; cursor:pointer;
+    font-family:'Oswald',sans-serif; font-weight:700;
+    font-size:0.9rem; letter-spacing:2.5px; text-transform:uppercase;
+    text-decoration:none; display:inline-block;
+    box-shadow: 0 0 0 1.5px hsl(var(--hue) 90% 60%),
+                0 0 22px hsl(var(--hue) 90% 58% / 0.3);
+    animation: breathe 3s ease-in-out infinite;
+  }
+  .btn-glow:hover { background: hsl(var(--hue) 90% 58%); color:#0a0a0a; }
+  @keyframes breathe {
+    0%,100% { box-shadow: 0 0 0 1.5px hsl(var(--hue) 90% 60%),
+                          0 0 18px hsl(var(--hue) 90% 58% / 0.25); }
+    50%     { box-shadow: 0 0 0 1.5px hsl(var(--hue) 90% 60%),
+                          0 0 32px hsl(var(--hue) 90% 58% / 0.5);  }
+  }
+  .glow-line {
+    border-bottom: 2px solid transparent;
+    border-image: linear-gradient(90deg,
+      hsl(var(--hue) 90% 60%),
+      hsl(calc(var(--hue) + 60) 90% 60%),
+      hsl(var(--hue) 90% 60%)) 1;
+  }
+  .accent { color: hsl(var(--hue) 90% 45%); font-weight:700; }
 
   /* board-edge rainbow strip top/bottom */
   body::before, body::after {
@@ -177,10 +243,16 @@
 </head>
 <body>
 
+<!-- ═════════ VIDEO BACKGROUND ═════════ -->
+<video class="bg-video" autoplay muted loop playsinline poster="deed-columbia.jpg">
+  <source src="bg.mp4" type="video/mp4"/>
+</video>
+<div class="bg-video-tint"></div>
+
 <header>
   <div class="est">Est. 1996 · Dr. Nicole Bishop</div>
   <h1>Speak Easy</h1>
-  <div class="sub">Four properties · one method · pick your door</div>
+  <div class="sub glow-line">Four properties · <span class="accent">one method</span> · pick your door</div>
   <div class="legend">
     <span class="chip night">Night</span>
     <span class="chip day">Day <small style="opacity:0.55;letter-spacing:1px;">soon</small></span>
@@ -244,7 +316,7 @@
     </div>
 
     <div class="cta">
-      <a class="btn" href="course.html">▸ See the Course · Get Certified</a>
+      <a class="btn-glow" href="course.html">▸ See the Course · Get Certified</a>
     </div>
   </div>
 </section>
