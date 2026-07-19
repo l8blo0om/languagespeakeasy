@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Speak Easy Pro · The Remote Curriculum — 24 Weeks of American Accent &amp; Phone Presence</title>
+<meta name="description" content="The complete Speak Easy Pro curriculum: 4 arcs × 6 weeks of play-based American accent training for remote ESL professionals. Drill bank, shadowing library, roleplay deck, assessment rubric."/>
+<meta property="og:type" content="article"/>
+<meta property="og:url" content="https://languagespeakeasy.com/pro/curriculum"/>
+<meta property="og:title" content="Speak Easy Pro — The Remote Curriculum"/>
+<meta property="og:description" content="Every arc, every drill, every game. The 24-week method in full."/>
+<meta property="og:image" content="https://languagespeakeasy.com/og-pro.jpg"/>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Nunito:wght@400;600;700;800&family=Special+Elite&display=swap" rel="stylesheet"/>
+<style>
+  *,*::before,*::after { box-sizing:border-box; margin:0; padding:0; }
+  :root {
+    --board:  #F0E6C8;
+    --cream:  #FAF4E1;
+    --paper:  #FFFEF8;
+    --dark:   #1A1A1A;
+    --violet: #7C4DBF;
+    --violet-deep: #4B2882;
+    --red:    #ED1B24;
+    --orange: #F7941D;
+    --yellow: #FEF200;
+    --green:  #1FB25A;
+    --darkblue:#0072BB;
+  }
+  html { scroll-behavior:smooth; }
+  body { font-family:'Nunito',sans-serif; background:var(--board); color:var(--dark); padding:12px 0; }
+  body::before, body::after {
+    content:''; position:fixed; left:0; right:0; height:12px; z-index:50;
+    background: repeating-linear-gradient(90deg,
+      var(--violet-deep) 0 60px, var(--violet) 60px 120px, #2E1D4E 120px 180px);
+  }
+  body::before { top:0; } body::after { bottom:0; }
+
+  .wrap { max-width:860px; margin:0 auto; padding:0 1.75rem; }
+
+  header { text-align:center; padding:4.5rem 1.5rem 1.5rem; }
+  .est { font-family:'Special Elite',cursive; font-size:0.72rem; letter-spacing:5px;
+         text-transform:uppercase; opacity:0.7; margin-bottom:1rem; }
+  h1 { font-family:'Oswald',sans-serif; font-size:clamp(2.2rem,6vw,3.6rem); font-weight:700;
+       text-transform:uppercase; letter-spacing:3px; line-height:1; }
+  .sub { font-family:'Special Elite',cursive; font-size:0.95rem; letter-spacing:3px;
+         text-transform:uppercase; margin-top:0.9rem; opacity:0.8; }
+  .backlink { display:inline-block; margin-top:1.4rem; font-family:'Oswald',sans-serif;
+    font-size:0.72rem; font-weight:700; letter-spacing:2.5px; text-transform:uppercase;
+    color:var(--dark); text-decoration:none; background:var(--yellow);
+    border:2px solid var(--dark); padding:0.5rem 1rem; box-shadow:3px 3px 0 var(--dark); }
+  .backlink:hover { background:var(--paper); }
+
+  /* TOC */
+  nav.toc {
+    max-width:860px; margin:2.5rem auto; padding:0 1.75rem;
+  }
+  nav.toc ol {
+    background:var(--paper); border:2.5px solid var(--dark); box-shadow:6px 6px 0 var(--dark);
+    list-style:none; padding:1.5rem 1.75rem; columns:2; column-gap:2.5rem;
+  }
+  @media (max-width:640px) { nav.toc ol { columns:1; } }
+  nav.toc li { padding:0.3rem 0; break-inside:avoid; }
+  nav.toc a { color:var(--dark); text-decoration:none; font-size:0.92rem; font-weight:700; }
+  nav.toc a:hover { text-decoration:underline; text-underline-offset:4px; }
+  nav.toc .num { font-family:'Oswald',sans-serif; color:var(--violet-deep); margin-right:0.5rem; }
+
+  /* CHAPTER = deed card */
+  section.ch {
+    background:var(--paper); border:2.5px solid var(--dark);
+    box-shadow:6px 6px 0 var(--dark); margin:0 0 2.5rem;
+  }
+  section.ch .band {
+    padding:0.85rem 1.4rem; border-bottom:2.5px solid var(--dark);
+    display:flex; justify-content:space-between; align-items:baseline; gap:1rem; flex-wrap:wrap;
+    font-family:'Oswald',sans-serif; text-transform:uppercase;
+    background:var(--violet-deep); color:var(--cream);
+  }
+  section.ch.alt1 .band { background:var(--red); }
+  section.ch.alt2 .band { background:var(--orange); color:var(--dark); }
+  section.ch.alt3 .band { background:var(--green); }
+  section.ch.alt4 .band { background:var(--darkblue); }
+  section.ch .band .n { font-size:0.68rem; letter-spacing:3px; font-weight:700; }
+  section.ch .band .t { font-size:1.2rem; letter-spacing:1.5px; font-weight:700; }
+  section.ch .body { padding:1.5rem 1.6rem 1.75rem; }
+  section.ch h3 { font-family:'Oswald',sans-serif; font-size:1rem; letter-spacing:1.5px;
+    text-transform:uppercase; margin:1.4rem 0 0.5rem; color:var(--violet-deep);
+    border-bottom:2px solid rgba(0,0,0,0.12); padding-bottom:0.35rem; }
+  section.ch h3:first-child { margin-top:0; }
+  section.ch p { font-size:0.98rem; line-height:1.75; margin-bottom:0.9rem; color:#2c2c2c; }
+  section.ch ul, section.ch ol { padding-left:1.3rem; margin-bottom:0.9rem; }
+  section.ch li { font-size:0.95rem; line-height:1.7; margin-bottom:0.35rem; color:#2c2c2c; }
+  section.ch strong { color:var(--dark); }
+  .elite { font-family:'Special Elite',cursive; }
+
+  /* week table */
+  table.wk { width:100%; border-collapse:collapse; margin:0.75rem 0 1rem; }
+  table.wk th, table.wk td { border:1.5px solid var(--dark); padding:0.55rem 0.7rem;
+    font-size:0.88rem; line-height:1.5; text-align:left; vertical-align:top; }
+  table.wk th { font-family:'Oswald',sans-serif; font-size:0.72rem; letter-spacing:2px;
+    text-transform:uppercase; background:var(--cream); }
+  table.wk td .goal { font-family:'Special Elite',cursive; font-size:0.75rem;
+    letter-spacing:1px; text-transform:uppercase; color:#777; display:block; margin-top:0.25rem; }
+  .scroll { overflow-x:auto; }
+
+  /* callout chips */
+  .chip-row { display:flex; flex-wrap:wrap; gap:0.5rem; margin:0.5rem 0 1rem; }
+  .chip { font-family:'Oswald',sans-serif; font-size:0.68rem; font-weight:700;
+    letter-spacing:2px; text-transform:uppercase; padding:0.35rem 0.75rem;
+    background:var(--dark); color:var(--cream); }
+  .chip.y { background:var(--yellow); color:var(--dark); }
+  .chip.v { background:var(--violet); color:var(--paper); }
+
+  .note {
+    background:var(--cream); border:2px dashed var(--violet-deep);
+    padding:1rem 1.2rem; margin:1rem 0; font-size:0.92rem; line-height:1.7;
+  }
+  .note .k { font-family:'Oswald',sans-serif; font-size:0.68rem; font-weight:700;
+    letter-spacing:2.5px; text-transform:uppercase; color:var(--violet-deep);
+    display:block; margin-bottom:0.35rem; }
+
+  footer { text-align:center; padding:2rem 1.5rem 3.5rem;
+    font-family:'Special Elite',cursive; font-size:0.82rem; letter-spacing:2px; text-transform:uppercase; }
+  footer .brand { font-family:'Oswald',sans-serif; font-size:1rem; font-weight:700;
+    letter-spacing:3px; margin-bottom:0.5rem; }
+  footer a { color:var(--dark); text-decoration:underline; text-underline-offset:4px; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="est">Speak Easy Pro · Instructor &amp; Learner Edition · Dr. Nicole Bishop</div>
+  <h1>The Remote Curriculum</h1>
+  <div class="sub">24 weeks · 4 arcs · played, not studied</div>
+  <a class="backlink" href="pro.html">▸ Back to Speak Easy Pro</a>
+</header>
+
+<nav class="toc">
+  <ol>
+    <li><a href="#method"><span class="num">01</span>The Method</a></li>
+    <li><a href="#outcomes"><span class="num">02</span>Who It's For &amp; Outcomes</a></li>
+    <li><a href="#architecture"><span class="num">03</span>Program Architecture</a></li>
+    <li><a href="#rhythm"><span class="num">04</span>The Weekly Rhythm</a></li>
+    <li><a href="#arc1"><span class="num">05</span>Arc 1 · The American Sound System</a></li>
+    <li><a href="#arc2"><span class="num">06</span>Arc 2 · The Music of the Line</a></li>
+    <li><a href="#arc3"><span class="num">07</span>Arc 3 · The Workplace Playbook</a></li>
+    <li><a href="#arc4"><span class="num">08</span>Arc 4 · The Performance</a></li>
+    <li><a href="#drills"><span class="num">09</span>The Drill Bank</a></li>
+    <li><a href="#shadowing"><span class="num">10</span>The Shadowing Library</a></li>
+    <li><a href="#roleplay"><span class="num">11</span>The Roleplay Deck</a></li>
+    <li><a href="#pinata"><span class="num">12</span>The Friday Piñata</a></li>
+    <li><a href="#assessment"><span class="num">13</span>Assessment &amp; Evidence</a></li>
+    <li><a href="#tech"><span class="num">14</span>Tech Setup &amp; House Rules</a></li>
+    <li><a href="#certificates"><span class="num">15</span>Certificates &amp; Pathways</a></li>
+    <li><a href="#checklist"><span class="num">16</span>Coach's Session Checklist</a></li>
+  </ol>
+</nav>
+
+<div class="wrap">
+
+<!-- 01 METHOD -->
+<section class="ch" id="method">
+  <div class="band"><span class="n">Chapter 01</span><span class="t">The Method</span></div>
+  <div class="body">
+    <h3>Intelligibility, not assimilation</h3>
+    <p>Speak Easy Pro does not "fix" accents. An accent is a biography — it says you speak more languages
+    than the person on the other end of the line. What we train is <strong>intelligibility under pressure</strong>:
+    being effortlessly understood through a headset, on compressed audio, by a distracted stranger, on the first try.
+    The goal is a voice that is unmistakably yours and unmistakably clear.</p>
+
+    <h3>Played, not studied</h3>
+    <p>Adults acquire sound the same way kids do — through play, repetition, and emotional safety. Nobody
+    ever fixed a vowel by reading about it. The whole program runs on four moves:</p>
+    <ul>
+      <li><strong>Games</strong> — every drill is disguised as a game with points, teams, or a clock.</li>
+      <li><strong>Shadowing</strong> — imitating real American voices until their rhythm lives in your mouth.</li>
+      <li><strong>Roleplay</strong> — rehearsing the actual calls you take, with escalating difficulty.</li>
+      <li><strong>Recording</strong> — hearing yourself back daily, because the ear must learn before the mouth can.</li>
+    </ul>
+
+    <h3>The bar, moved online</h3>
+    <p>Our in-person programs run in bars because relaxed people acquire language and tense people perform it badly.
+    The remote version keeps the bar's DNA: evening hours, small tables (max 8), laughter as a design requirement,
+    and a Friday session that exists purely to lower the stakes. The room is virtual. The looseness is not.</p>
+
+    <div class="note"><span class="k">The one rule</span>
+    Nobody is corrected mid-sentence, ever. Corrections come after the rep, one at a time, and always with a replay.
+    A learner who fears interruption stops talking. A learner who expects a replay leans in.</div>
+  </div>
+</section>
+
+<!-- 02 OUTCOMES -->
+<section class="ch alt1" id="outcomes">
+  <div class="band"><span class="n">Chapter 02</span><span class="t">Who It's For &amp; Outcomes</span></div>
+  <div class="body">
+    <h3>The learner</h3>
+    <p>Working professionals — B1 English and above — whose job happens in spoken English over a headset:
+    customer service and tech support reps, virtual assistants, sales and success teams, schedulers,
+    dispatchers, telehealth coordinators. They don't need more English. They need the English they have
+    to <strong>land</strong>.</p>
+
+    <h3>What changes in 24 weeks</h3>
+    <ul>
+      <li><strong>Repeat-rate drops.</strong> Fewer "sorry, could you say that again?" moments per call — the single clearest metric of intelligibility.</li>
+      <li><strong>The problem sounds are handled.</strong> R, TH, flap T, schwa, and the learner's L1-specific vowel swaps, drilled to automatic in work vocabulary.</li>
+      <li><strong>The music is American.</strong> Stress-timing, chunking, and the falling "authority" intonation that reads as confident rather than uncertain.</li>
+      <li><strong>The playbook is loaded.</strong> Openings, empathy lines, de-escalations, bad-news scripts, and small talk — rehearsed until they're reflexes, not translations.</li>
+      <li><strong>The evidence exists.</strong> A baseline recording from week 1 and a capstone from week 24, scored on the same rubric. Progress you can play out loud.</li>
+    </ul>
+
+    <div class="note"><span class="k">For employers</span>
+    Team cohorts map these outcomes to your QA sheet: average handle time, first-call resolution,
+    customer satisfaction language flags. Managers get a monthly one-page progress report per seat.</div>
+  </div>
+</section>
+
+<!-- 03 ARCHITECTURE -->
+<section class="ch alt2" id="architecture">
+  <div class="band"><span class="n">Chapter 03</span><span class="t">Program Architecture</span></div>
+  <div class="body">
+    <h3>The shape</h3>
+    <ul>
+      <li><strong>4 arcs × 6 weeks = 24 weeks.</strong> Each arc ends in a showcase week — a performance, not a test.</li>
+      <li><strong>One 60-minute live cohort session per week</strong> on Zoom. Max 8 learners per cohort. Evening slots, US Eastern, scheduled to sit after LatAm / East-Europe shift ends.</li>
+      <li><strong>One 10-minute Shift Drill per workday</strong>, asynchronous, in the cohort's private channel. Record → listen back → one micro-correction from the coach within 24 hours.</li>
+      <li><strong>Friday Piñata</strong> — a 45-minute optional pressure-off session. Games only. No corrections.</li>
+    </ul>
+
+    <h3>Why this dose</h3>
+    <p>Accent change is motor learning. Motor learning responds to <strong>frequency over duration</strong> —
+    ten focused minutes daily beats two heroic hours on Sunday. The weekly live session sets the target;
+    the daily drills wire it in; the Friday session makes people stay.</p>
+
+    <h3>Entry and exit</h3>
+    <p>Learners can join at the start of any arc (weeks 1, 7, 13, 19). Arc 1 is the recommended door.
+    Each arc stands alone; together they compound. A learner who completes all four arcs earns the
+    Speak Easy Pro Certificate (<a href="#certificates" style="color:var(--violet-deep)">Chapter 15</a>).</p>
+  </div>
+</section>
+
+<!-- 04 RHYTHM -->
+<section class="ch alt3" id="rhythm">
+  <div class="band"><span class="n">Chapter 04</span><span class="t">The Weekly Rhythm</span></div>
+  <div class="body">
+    <h3>The live session, minute by minute</h3>
+    <div class="scroll"><table class="wk">
+      <tr><th>Min</th><th>Beat</th><th>What happens</th></tr>
+      <tr><td>0–8</td><td><strong>Warm-up game</strong></td><td>Low-stakes mouth and ear opener tied to the week's sound. Tongue-twister relay, minimal-pair bingo, "pass the phrase." Laughter target: inside 3 minutes.</td></tr>
+      <tr><td>8–20</td><td><strong>Shadow block</strong></td><td>The week's TV clip (30–60 sec). Listen → chorus together → solo shadow with mic on, one at a time. Coach models mouth position on camera.</td></tr>
+      <tr><td>20–35</td><td><strong>The drill</strong></td><td>The week's target sound or pattern, drilled inside the learner's real work vocabulary — their product names, their scripts, their sign-offs.</td></tr>
+      <tr><td>35–52</td><td><strong>Roleplay</strong></td><td>Scenario from the Roleplay Deck, cast live. One caller, one rep, everyone else on QA duty listening for the week's target. Rotate twice.</td></tr>
+      <tr><td>52–60</td><td><strong>Replay &amp; assign</strong></td><td>One clip replayed with praise for something specific. The week's Shift Drills assigned. Close with the cohort's running joke.</td></tr>
+    </table></div>
+
+    <h3>The Shift Drill (daily, async, 10 min)</h3>
+    <ol>
+      <li><strong>Prompt drops</strong> at the same hour daily — one sentence or micro-scenario using the week's target.</li>
+      <li><strong>Record</strong> yourself on your phone. First take is fine; third take is better.</li>
+      <li><strong>Listen back once</strong> before posting. Self-hearing is half the training.</li>
+      <li><strong>Post it.</strong> Coach replies within 24h: one thing that worked, one micro-correction, never more.</li>
+    </ol>
+
+    <div class="note"><span class="k">Streak mechanic</span>
+    Drills build a visible streak. Streaks earn Monopoly money. Monopoly money buys real things at the
+    arc showcase: pick the karaoke song, skip a roleplay, make the coach do the angry-customer role.
+    It's silly. It works.</div>
+  </div>
+</section>
+
+<!-- 05 ARC 1 -->
+<section class="ch" id="arc1">
+  <div class="band"><span class="n">Chapter 05 · Arc 1 · Weeks 1–6</span><span class="t">The American Sound System</span></div>
+  <div class="body">
+    <p>The segmental arc: the individual sounds that trigger "could you repeat that?" Every week targets
+    one high-frequency offender, drilled inside work vocabulary from day one. Week 1 opens with the
+    <strong>baseline recording</strong> — a 90-second mock call, archived for the capstone comparison.</p>
+    <div class="scroll"><table class="wk">
+      <tr><th>Wk</th><th>Target</th><th>The work</th></tr>
+      <tr><td>1</td><td><strong>The American R</strong></td><td>Bunched-tongue R in all positions: <span class="elite">right away, our records, your order number, warranty</span>. Mirror work, growl-to-R ladder, R-loaded script reads.<span class="goal">Baseline recording captured this week.</span></td></tr>
+      <tr><td>2</td><td><strong>The two THs</strong></td><td>Voiced (<span class="elite">this, that, other</span>) and unvoiced (<span class="elite">thanks, three, month</span>). Tongue-visible drills on camera; minimal pairs: <span class="elite">tank/thank, dat/that, tree/three</span>.</td></tr>
+      <tr><td>3</td><td><strong>The flap T</strong></td><td>The sound that makes American English American: <span class="elite">water → wader, better → bedder, a lot of → a lodda</span>. When to flap, when not to (<span class="elite">thirteen</span> vs <span class="elite">thirty</span>).</td></tr>
+      <tr><td>4</td><td><strong>Schwa &amp; reductions</strong></td><td>The lazy vowel that runs English: <span class="elite">to → tə, can → kən, for → fər</span>. Learning that native speed comes from reduction, not from talking fast.</td></tr>
+      <tr><td>5</td><td><strong>Vowel contrasts</strong></td><td>The swaps that change words, keyed to the cohort's L1s: <span class="elite">ship/sheep, full/fool, cat/cut, coast/cost</span>. Minimal-pair bingo with real product vocabulary.</td></tr>
+      <tr><td>6</td><td><strong>Showcase</strong></td><td>Each learner performs a 60-second "perfect call opening" live, loaded with arc sounds. Cohort votes superlatives. Monopoly money paid out. Piñata after.</td></tr>
+    </table></div>
+  </div>
+</section>
+
+<!-- 06 ARC 2 -->
+<section class="ch alt1" id="arc2">
+  <div class="band"><span class="n">Chapter 06 · Arc 2 · Weeks 7–12</span><span class="t">The Music of the Line</span></div>
+  <div class="body">
+    <p>The suprasegmental arc — rhythm, stress, and melody. This is where "correct but foreign" becomes
+    "sounds American." English is stress-timed: the beats land on content words and everything else
+    compresses. Callers navigate by that beat. Give it to them.</p>
+    <div class="scroll"><table class="wk">
+      <tr><th>Wk</th><th>Target</th><th>The work</th></tr>
+      <tr><td>7</td><td><strong>Stress &amp; beat</strong></td><td>Clap-the-sentence drills. <span class="elite">I can HELP you with THAT to-DAY.</span> Same sentence, beats moved, meaning changes. Drumming scripts on the desk.</td></tr>
+      <tr><td>8</td><td><strong>Chunking</strong></td><td>Long information split into breath-sized pieces: account numbers, addresses, troubleshooting steps. The pause is a gift to the listener, not a weakness.</td></tr>
+      <tr><td>9</td><td><strong>The authority drop</strong></td><td>Falling intonation at the end of statements. Rising endings read as unsure; the drop reads as calm command. Drill: same script, both melodies, cohort scores "would you trust this rep?"</td></tr>
+      <tr><td>10</td><td><strong>Connected speech</strong></td><td>Linking: <span class="elite">turn it off → tur-ni-doff, what I mean → wha-dai-mean</span>. Catching linked speech by ear (the listening superpower) and producing it.</td></tr>
+      <tr><td>11</td><td><strong>Phone cadence</strong></td><td>Pace under pressure: the 3-beat empathy pause, slowing for numbers, speeding through pleasantries. Recording on actual compressed phone audio to hear what the caller hears.</td></tr>
+      <tr><td>12</td><td><strong>Showcase</strong></td><td>"The Radio Hour" — each learner delivers a 90-second story on-mic, judged on music only. Cohort must be able to hum the melody back.</td></tr>
+    </table></div>
+  </div>
+</section>
+
+<!-- 07 ARC 3 -->
+<section class="ch alt3" id="arc3">
+  <div class="band"><span class="n">Chapter 07 · Arc 3 · Weeks 13–18</span><span class="t">The Workplace Playbook</span></div>
+  <div class="body">
+    <p>The register arc. The sounds and music now carry the actual job: scripts that de-escalate,
+    empathy that doesn't sound canned, refusals that keep the customer, and the small talk that
+    American callers use to decide whether they like you.</p>
+    <div class="scroll"><table class="wk">
+      <tr><th>Wk</th><th>Target</th><th>The work</th></tr>
+      <tr><td>13</td><td><strong>Openings</strong></td><td>The first 5 seconds: greeting, name, offer of help — clear, warm, unhurried. Drilled to a reflex in each learner's real company script.</td></tr>
+      <tr><td>14</td><td><strong>Empathy lines</strong></td><td><span class="elite">"I hear you — that would frustrate me too."</span> Stress and melody that make stock phrases sound meant. The difference between reading empathy and doing it.</td></tr>
+      <tr><td>15</td><td><strong>De-escalation</strong></td><td>The angry caller: lower pitch, slower pace, name their problem back to them. Roleplay ladder from "mildly annoyed" to "wants a supervisor."</td></tr>
+      <tr><td>16</td><td><strong>Bad news &amp; the graceful no</strong></td><td><span class="elite">"Here's what I can do."</span> Refusing the request while keeping the relationship. Warranty denials, refund limits, policy walls — performed, replayed, refined.</td></tr>
+      <tr><td>17</td><td><strong>Small talk &amp; humor</strong></td><td>Weather, weekends, sports-adjacent noises, the safe joke. When to chat, when to close. The 15-second bond that raises satisfaction scores.</td></tr>
+      <tr><td>18</td><td><strong>Showcase — the Mock Call Gauntlet</strong></td><td>Full 5-minute calls, coach as caller, scenario drawn blind from the Roleplay Deck. Scored on the QA rubric. Replayed with popcorn.</td></tr>
+    </table></div>
+  </div>
+</section>
+
+<!-- 08 ARC 4 -->
+<section class="ch alt4" id="arc4">
+  <div class="band"><span class="n">Chapter 08 · Arc 4 · Weeks 19–24</span><span class="t">The Performance</span></div>
+  <div class="body">
+    <p>The presence arc. Beyond calls: meetings, interviews, introductions, stories. The learner stops
+    monitoring their English and starts using it. The arc — and the program — ends with recorded proof.</p>
+    <div class="scroll"><table class="wk">
+      <tr><th>Wk</th><th>Target</th><th>The work</th></tr>
+      <tr><td>19</td><td><strong>Presence</strong></td><td>Filler audit (<span class="elite">um, like, you know, actually</span>), the silent pause as power, breath before speaking. On-camera posture and voice placement for video meetings.</td></tr>
+      <tr><td>20</td><td><strong>Storytelling</strong></td><td>The 90-second work story: setup → tension → payoff. Telling it without rushing, with the beat landing where the meaning lands.</td></tr>
+      <tr><td>21</td><td><strong>Meetings &amp; interviews</strong></td><td>Interrupting politely, disagreeing upward, the status update that sounds finished. Interview answers with the authority drop installed.</td></tr>
+      <tr><td>22</td><td><strong>Accent ownership</strong></td><td>Scripting the accent line: <span class="elite">"You'll hear an accent — it means I speak three languages. Now, about your order."</span> Turning the self-conscious flinch into a flex.</td></tr>
+      <tr><td>23</td><td><strong>The capstone recording</strong></td><td>Re-record the week-1 baseline call, same scenario, same rubric. Side-by-side playback. This is the product: audible, undeniable change.</td></tr>
+      <tr><td>24</td><td><strong>Graduation</strong></td><td>Capstones screened at the cohort party. Certificates issued. Superlatives awarded. Alumni channel unlocked. Piñata, obviously.</td></tr>
+    </table></div>
+  </div>
+</section>
+
+<!-- 09 DRILL BANK -->
+<section class="ch alt2" id="drills">
+  <div class="band"><span class="n">Chapter 09</span><span class="t">The Drill Bank</span></div>
+  <div class="body">
+    <p>The recurring drill formats. Every drill runs inside work vocabulary — the learner's product names,
+    scripts, and sign-offs — never generic word lists.</p>
+    <ul>
+      <li><strong>The Ladder.</strong> Sound → syllable → word → phrase → script line → improvised sentence. Six rungs, one minute per rung.</li>
+      <li><strong>Minimal-Pair Bingo.</strong> Cards of near-twins (<span class="elite">ship/sheep, tank/thank, wader/waiter</span>). Coach calls one; mark what you heard. Then learners call — production and perception in one game.</li>
+      <li><strong>The Growl-to-R.</strong> Sustained growl → curl into bunched R → release into <span class="elite">"right away."</span> Works because the growl finds the tongue position that explanation can't.</li>
+      <li><strong>Slow-Motion Replay.</strong> One sentence at half speed with exaggerated mouth shapes, then normal speed, then phone speed. Three reps, recorded.</li>
+      <li><strong>The Beat Clap.</strong> Clap only on stressed syllables while reading a script. Then drop the clap, keep the beat.</li>
+      <li><strong>Backchaining.</strong> Build long phrases from the end: <span class="elite">number → account number → your account number → verify your account number → I need to verify your account number.</span> The ending stays strong because it was learned first.</li>
+      <li><strong>Shadow Loop.</strong> 15-second clip on repeat; speak with it (not after it) until the delay hits zero.</li>
+      <li><strong>The Compression Test.</strong> Record on a real phone line or compressed voice memo. If it survives compression, it survives the job.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- 10 SHADOWING -->
+<section class="ch" id="shadowing">
+  <div class="band"><span class="n">Chapter 10</span><span class="t">The Shadowing Library</span></div>
+  <div class="body">
+    <p>Shadowing sources are chosen for <strong>register</strong>, not fame. Each arc pulls from a different shelf.
+    Clips run 30–60 seconds, transcribed, marked for stress and linking.</p>
+    <ul>
+      <li><strong>Warm competence</strong> (Arc 1–2): Ted Lasso, Abbott Elementary teachers, NPR hosts. Clear, kind, unhurried — the target register for support work.</li>
+      <li><strong>Calm authority</strong> (Arc 2–3): airline pilots' PA voice, Obama's measured cadence, senior-doctor characters (Grey's Anatomy attendings). The falling melody, the unforced pause.</li>
+      <li><strong>Fast precision</strong> (Arc 3): The West Wing walk-and-talks, sports play-by-play in slow sections. Speed with beat intact — for learners who must keep up with rapid callers.</li>
+      <li><strong>Charm &amp; humor</strong> (Arc 3–4): late-night monologue setups, Parks &amp; Recreation, stand-up openers. Timing, self-deprecation, the safe joke shape.</li>
+      <li><strong>Customer-call verité</strong> (all arcs): anonymized real support-call recordings (with permission), both brilliant and terrible. Learners QA them before shadowing the good ones.</li>
+    </ul>
+    <div class="note"><span class="k">Coach's rule</span>
+    Never assign a shadow voice that doesn't match the learner's range. A soft-spoken learner shadowing
+    a booming broadcaster learns strain, not English. Match voice to voice; the register is the lesson.</div>
+  </div>
+</section>
+
+<!-- 11 ROLEPLAY -->
+<section class="ch alt1" id="roleplay">
+  <div class="band"><span class="n">Chapter 11</span><span class="t">The Roleplay Deck</span></div>
+  <div class="body">
+    <p>Scenario cards, drawn blind, cast live. Each card carries an escalation dial (1–3) so the same
+    scenario can be played gentle in week 13 and feral in week 18.</p>
+    <ul>
+      <li><strong>The Angry Customer.</strong> Overcharged twice, on hold 40 minutes. Dial 3: "let me speak to your supervisor" inside the first minute.</li>
+      <li><strong>The Confused Senior.</strong> Kind, slow, can't find the power button. Tests chunking, patience pace, and never talking down.</li>
+      <li><strong>The Rambler.</strong> Wants to tell you about their grandson. Tests the polite steer and the warm close.</li>
+      <li><strong>The Rapid-Fire Exec.</strong> No pleasantries, three questions at once, hates pauses that aren't information. Tests speed with beat intact.</li>
+      <li><strong>The Refund Wall.</strong> They want the refund policy doesn't allow. Tests the graceful no and "here's what I can do."</li>
+      <li><strong>The Outage.</strong> Everything is down, you have no ETA, the queue is on fire. Tests honest uncertainty with calm authority.</li>
+      <li><strong>The Language Comment.</strong> "Can I talk to someone American?" Tests the accent-ownership line and staying in command. Practiced until it has no sting.</li>
+      <li><strong>The Sales Objection.</strong> "It's too expensive." Tests the pause, the question back, the story.</li>
+      <li><strong>The Happy Path.</strong> Easy call, nice customer. Tests small talk, humor, and the upsell that doesn't feel like one.</li>
+    </ul>
+    <p>Everyone not in the scene runs <strong>QA duty</strong>: a one-line scorecard listening for the week's
+    target only. QA duty is secretly the deepest listening drill in the program.</p>
+  </div>
+</section>
+
+<!-- 12 PIÑATA -->
+<section class="ch alt2" id="pinata">
+  <div class="band"><span class="n">Chapter 12</span><span class="t">The Friday Piñata</span></div>
+  <div class="body">
+    <p>Forty-five minutes, optional, zero corrections. The week's drills get smashed open and the sounds
+    fall out as play. This session exists because the accent sticks when you're laughing —
+    and because Friday attendance is the truest measure of program health.</p>
+    <ul>
+      <li><strong>Movie-Line Battles.</strong> Two learners, same famous line, most American delivery wins the Monopoly money.</li>
+      <li><strong>90s Karaoke.</strong> Slow songs are connected-speech goldmines. <span class="elite">"I Want It That Way"</span> is a linking masterclass.</li>
+      <li><strong>Improv formats.</strong> "Yes, and—" scenes set at work: the printer is haunted, the customer is a ghost, the product is soup.</li>
+      <li><strong>The Joke Lab.</strong> Everyone brings one two-line joke. Timing drilled shamelessly. Bad jokes celebrated hardest.</li>
+      <li><strong>Accent Swap.</strong> Learners imitate the coach's English. Turnabout is pedagogically fair play and the single best ear-training game we have.</li>
+      <li><strong>Story Dice.</strong> Three random emoji → 60-second story, beat landing where the meaning lands.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- 13 ASSESSMENT -->
+<section class="ch alt3" id="assessment">
+  <div class="band"><span class="n">Chapter 13</span><span class="t">Assessment &amp; Evidence</span></div>
+  <div class="body">
+    <h3>The instrument</h3>
+    <p>A 90-second scripted mock call, recorded at week 1 (baseline), week 12 (midpoint), and week 23 (capstone).
+    Same script, same rubric, blind-scored by a coach who doesn't run that cohort.</p>
+    <h3>The rubric — five dimensions, five points each</h3>
+    <ul>
+      <li><strong>Segmental clarity</strong> — are the target sounds produced in connected speech?</li>
+      <li><strong>Rhythm &amp; melody</strong> — is stress-timing present? Does the intonation fall where authority lives?</li>
+      <li><strong>Chunking &amp; pace</strong> — can a listener transcribe the numbers and steps on first hearing?</li>
+      <li><strong>Register fit</strong> — does the empathy sound meant, the no sound graceful, the open sound warm?</li>
+      <li><strong>Listener effort</strong> — the bottom line: how hard did the scorer work to understand? (Scored before the other four.)</li>
+    </ul>
+    <h3>Evidence culture</h3>
+    <p>Every learner leaves with their baseline and capstone side by side. For team cohorts, monthly
+    manager reports track rubric movement plus the learner's own streak and attendance — never raw
+    recordings without the learner's consent. The learner owns their voice.</p>
+  </div>
+</section>
+
+<!-- 14 TECH -->
+<section class="ch alt4" id="tech">
+  <div class="band"><span class="n">Chapter 14</span><span class="t">Tech Setup &amp; House Rules</span></div>
+  <div class="body">
+    <h3>The kit</h3>
+    <ul>
+      <li><strong>A headset</strong> — the one you work in. Training in your work gear is the point.</li>
+      <li><strong>Zoom</strong> for live sessions. Camera on for drill blocks (mouths must be visible), camera-optional for Piñata.</li>
+      <li><strong>The cohort channel</strong> (private Discord/WhatsApp) for daily Shift Drills — voice notes in, coach feedback back.</li>
+      <li><strong>Your phone's voice memo app</strong> — the humble core technology of the entire program.</li>
+      <li><strong>A door you can close</strong> for one hour a week. Non-negotiable and harder than it sounds.</li>
+    </ul>
+    <h3>House rules</h3>
+    <ul>
+      <li>Nobody is corrected mid-sentence. Corrections come after the rep, one at a time, with a replay.</li>
+      <li>Nobody's recording leaves the room. Ever. Cohort recordings live in the cohort and die in the cohort.</li>
+      <li>Laughing <em>with</em> is the fuel; laughing <em>at</em> is the one bannable offense.</li>
+      <li>Your accent is a biography, not a bug. We are here to be understood, not to disappear.</li>
+      <li>Show up messy. The rep you're embarrassed by is the one that moves the rubric.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- 15 CERTIFICATES -->
+<section class="ch" id="certificates">
+  <div class="band"><span class="n">Chapter 15</span><span class="t">Certificates &amp; Pathways</span></div>
+  <div class="body">
+    <ul>
+      <li><strong>Arc Cards.</strong> Completing an arc earns a printable Title Deed card for that arc — collect all four.</li>
+      <li><strong>The Speak Easy Pro Certificate</strong> — issued at 24 weeks with capstone completed. States the rubric movement plainly: <span class="elite">"Listener effort score improved from X to Y."</span> A LinkedIn-ready credential that actually says something.</li>
+      <li><strong>Alumni channel.</strong> Graduates keep the community: monthly Piñata, job-posting board, interview-prep buddies.</li>
+      <li><strong>The franchise door.</strong> Standout graduates are invited toward <a href="course.html" style="color:var(--violet-deep)">The Course</a> — get certified to coach Speak Easy Pro cohorts in your own language market. The board grows by graduating its players into owners.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- 16 CHECKLIST -->
+<section class="ch alt1" id="checklist">
+  <div class="band"><span class="n">Chapter 16</span><span class="t">Coach's Session Checklist</span></div>
+  <div class="body">
+    <h3>Before (15 min)</h3>
+    <ul>
+      <li>Week's clip cued, transcript marked for stress and linking.</li>
+      <li>Roleplay card drawn, escalation dial set to cohort's level.</li>
+      <li>Each learner's last three Shift Drills reviewed — one praise note ready per person.</li>
+      <li>Monopoly money ledger current. Streaks verified.</li>
+    </ul>
+    <h3>During</h3>
+    <ul>
+      <li>Laughter by minute 3 or change the warm-up next week.</li>
+      <li>Every learner speaks solo, on mic, at least three times.</li>
+      <li>Corrections: after the rep, one at a time, with replay. Never mid-sentence.</li>
+      <li>End on time. Ending late steals from people who work for a living.</li>
+    </ul>
+    <h3>After (10 min)</h3>
+    <ul>
+      <li>Post the week's Shift Drill prompts.</li>
+      <li>Note each learner's one focus for next week.</li>
+      <li>Flag anyone two drills quiet — a quiet learner is a leaving learner. Reach out personally, lightly.</li>
+    </ul>
+  </div>
+</section>
+
+</div>
+
+<footer>
+  <div class="brand">Speak Easy Pro · The Remote Curriculum</div>
+  <div><a href="pro.html">Speak Easy Pro</a> · <a href="index.html">The Board</a> · <a href="course.html">Teach It</a> · <a href="mailto:speak.easy.columbia@gmail.com">Contact</a></div>
+</footer>
+
+</body>
+</html>

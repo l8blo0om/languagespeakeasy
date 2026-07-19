@@ -8,7 +8,7 @@
 <meta property="og:type" content="website"/>
 <meta property="og:url" content="https://languagespeakeasy.com/"/>
 <meta property="og:title" content="Language Speak Easy — The Board"/>
-<meta property="og:description" content="Four properties. One method. NIGHT · DAY · KIDS · COURSE. Pick your door."/>
+<meta property="og:description" content="Five properties. One method. NIGHT · DAY · KIDS · PRO · COURSE. Pick your door."/>
 <meta property="og:image" content="./og-umbrella.jpg"/>
 <meta property="og:image:width" content="1200"/>
 <meta property="og:image:height" content="630"/>
@@ -140,10 +140,12 @@
   .legend .chip.day { background:var(--yellow); color:var(--dark); }
   .legend .chip.night { background:var(--red); color:var(--cream); }
   .legend .chip.kids { background:var(--orange); color:var(--dark); }
+  .legend .chip.pro { background:#4B2882; color:var(--cream); }
   .legend .chip.course { background:var(--darkblue); color:var(--cream); }
 
   /* THE BOARD */
-  .board { max-width:1180px; margin:3.5rem auto 4rem; padding:1.5rem 2rem 2.5rem; display:grid; grid-template-columns:repeat(4, 1fr); gap:2.5rem 1.75rem; }
+  .board { max-width:1380px; margin:3.5rem auto 4rem; padding:1.5rem 2rem 2.5rem; display:grid; grid-template-columns:repeat(5, 1fr); gap:2.5rem 1.75rem; }
+  @media (max-width:1200px) { .board { grid-template-columns:repeat(3,1fr); max-width:900px; } }
   @media (max-width:1000px) { .board { grid-template-columns:repeat(2,1fr); gap:3rem 2rem; } }
   @media (max-width:560px)  { .board { grid-template-columns:1fr; gap:3rem; padding:1.5rem; } }
 
@@ -170,6 +172,7 @@
   .deed:nth-child(2):hover { transform: translateY(-6px) rotate(1.2deg); }
   .deed:nth-child(3):hover { transform: translateY(-6px) rotate(-0.8deg); }
   .deed:nth-child(4):hover { transform: translateY(-6px) rotate(1.2deg); }
+  .deed:nth-child(5):hover { transform: translateY(-6px) rotate(-1deg); }
 
   .deed .cat-tag {
     position:absolute; top:-10px; left:50%;
@@ -211,7 +214,8 @@
   .franchise .eyebrow { font-family:'Special Elite',cursive; font-size:0.78rem; letter-spacing:5px; color:var(--yellow); text-transform:uppercase; margin-bottom:1rem; }
   .franchise h2 { font-family:'Oswald',sans-serif; font-size:clamp(1.8rem,4vw,2.6rem); font-weight:700; text-transform:uppercase; letter-spacing:2px; margin-bottom:1rem; }
   .franchise p.lead { font-size:1.05rem; line-height:1.75; max-width:640px; margin:0 auto 2rem; color:rgba(250,244,225,0.85); }
-  .franchise .models { display:grid; grid-template-columns:repeat(3, 1fr); gap:1.5rem; margin-top:2rem; }
+  .franchise .models { display:grid; grid-template-columns:repeat(4, 1fr); gap:1.5rem; margin-top:2rem; }
+  @media (max-width:1000px) { .franchise .models { grid-template-columns:repeat(2,1fr); } }
   @media (max-width:700px) { .franchise .models { grid-template-columns:1fr; } }
   .franchise .model { background:#242424; padding:1.5rem 1.35rem; border:2px solid var(--yellow); text-align:left; }
   .franchise .model .cat { font-family:'Oswald',sans-serif; font-size:0.72rem; letter-spacing:4px; color:var(--yellow); font-weight:700; text-transform:uppercase; margin-bottom:0.5rem; }
@@ -252,11 +256,12 @@
 <header>
   <div class="est">Est. 1996 · Dr. Nicole Bishop</div>
   <h1>Speak Easy</h1>
-  <div class="sub glow-line">Four properties · <span class="accent">one method</span> · pick your door</div>
+  <div class="sub glow-line">Five properties · <span class="accent">one method</span> · pick your door</div>
   <div class="legend">
     <span class="chip night">Night</span>
     <span class="chip day">Day <small style="opacity:0.55;letter-spacing:1px;">soon</small></span>
     <span class="chip kids">Kids</span>
+    <span class="chip pro">Pro <small style="opacity:0.7;letter-spacing:1px;">remote</small></span>
     <span class="chip course">The Course</span>
   </div>
 </header>
@@ -280,6 +285,12 @@
     <span class="cat-tag">Kids</span>
     <img src="deed-kids.jpg" alt="Speak Easy 4 Kids — Monopoly title deed card"/>
     <span class="enter-tag">▸ Enter Kids</span>
+  </a>
+
+  <a class="deed pro" href="pro.html" aria-label="Speak Easy Pro — remote accent training">
+    <span class="cat-tag">Remote</span>
+    <img src="deed-pro.jpg" alt="Speak Easy Pro — Monopoly title deed card"/>
+    <span class="enter-tag">▸ Go Pro</span>
   </a>
 
   <a class="deed course" href="course.html" aria-label="The Course — get certified">
@@ -312,6 +323,11 @@
         <div class="cat">Kids</div>
         <h3>Afterschool</h3>
         <p>K–5 play-based Spanish. 8-week arcs. Six rotating sessions across the school year. Currently: <strong>Speak Easy 4 Kids</strong>.</p>
+      </div>
+      <div class="model">
+        <div class="cat">Remote</div>
+        <h3>Speak Easy Pro</h3>
+        <p>American accent + phone presence for ESL professionals, fully online. Zoom cohorts of 8, daily 10-min drills. <strong>Enrolling now.</strong></p>
       </div>
     </div>
 
