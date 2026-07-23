@@ -201,6 +201,32 @@
   }
   .deed:hover .enter-tag { background:var(--cream); }
 
+  /* METHOD VIDEOS */
+  .method-videos { max-width:1080px; margin:1rem auto 4rem; padding:0 2rem; text-align:center; position:relative; z-index:2; }
+  .method-videos h2 {
+    font-family:'Oswald',sans-serif; font-size:clamp(1.6rem,4vw,2.3rem);
+    text-transform:uppercase; letter-spacing:2px; margin-bottom:0.4rem;
+  }
+  .method-videos .mv-sub {
+    font-family:'Special Elite',cursive; font-size:0.85rem; letter-spacing:3px;
+    text-transform:uppercase; opacity:0.75; margin-bottom:2.25rem;
+  }
+  .mv-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:2rem; }
+  @media (max-width:900px) { .mv-grid { grid-template-columns:1fr; max-width:360px; margin:0 auto; } }
+  .mv-card {
+    background:var(--paper); border:2.5px solid var(--dark);
+    box-shadow:6px 6px 0 var(--dark);
+    display:flex; flex-direction:column;
+  }
+  .mv-card video { display:block; width:100%; aspect-ratio:9/16; object-fit:cover; background:#000; }
+  .mv-card .mv-title {
+    padding:0.8rem 0.9rem;
+    border-top:2.5px solid var(--dark);
+    font-family:'Oswald',sans-serif; font-weight:700;
+    font-size:0.82rem; letter-spacing:1.5px; text-transform:uppercase;
+    background:var(--yellow); color:var(--dark);
+  }
+
   /* FRANCHISE STRIP */
   .franchise {
     background:var(--dark); color:var(--cream);
@@ -301,6 +327,32 @@
   </a>
 
 </main>
+
+<!-- ═════════ METHOD VIDEOS ═════════ -->
+<section class="method-videos">
+  <h2>The method · in 60 seconds</h2>
+  <div class="mv-sub">Why fake money builds real fluency</div>
+  <div class="mv-grid">
+    <div class="mv-card">
+      <video controls preload="none" playsinline poster="method-fake-money-fluency-poster.jpg">
+        <source src="method-fake-money-fluency.mp4" type="video/mp4"/>
+      </video>
+      <div class="mv-title">How Fake Money Builds Real Fluency</div>
+    </div>
+    <div class="mv-card">
+      <video controls preload="none" playsinline poster="method-fake-money-english-poster.jpg">
+        <source src="method-fake-money-english.mp4" type="video/mp4"/>
+      </video>
+      <div class="mv-title">How Fake Money Teaches Real English</div>
+    </div>
+    <div class="mv-card">
+      <video controls preload="none" playsinline poster="method-peer-teaching-poster.jpg">
+        <source src="method-peer-teaching.mp4" type="video/mp4"/>
+      </video>
+      <div class="mv-title">Why Teaching Peers Accelerates Learning</div>
+    </div>
+  </div>
+</section>
 
 <!-- ═════════ FRANCHISE STRIP ═════════ -->
 <section class="franchise">
