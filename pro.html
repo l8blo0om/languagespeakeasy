@@ -187,6 +187,28 @@
              text-transform:uppercase; margin:0.4rem 0 0.5rem; }
   .beat p { font-size:0.92rem; line-height:1.65; color:var(--dim); }
 
+  /* METHOD VIDEO */
+  .method-video { display:grid; grid-template-columns:280px 1fr; gap:2.5rem; align-items:center; padding:1.5rem 0 2.5rem; }
+  @media (max-width:760px) { .method-video { grid-template-columns:1fr; } }
+  .mv-card {
+    background:var(--paper); border:2.5px solid #000;
+    box-shadow:6px 6px 0 rgba(0,0,0,0.55);
+    max-width:280px; margin:0 auto;
+  }
+  .mv-card video { display:block; width:100%; aspect-ratio:9/16; object-fit:cover; background:#000; }
+  .mv-card .mv-title {
+    padding:0.7rem 0.8rem; border-top:2.5px solid #000;
+    font-family:'Oswald',sans-serif; font-weight:700;
+    font-size:0.72rem; letter-spacing:1.5px; text-transform:uppercase;
+    background:var(--yellow); color:var(--dark);
+  }
+  .method-video .mv-note h3 {
+    font-family:'Oswald',sans-serif; font-size:1.3rem; letter-spacing:1.5px;
+    text-transform:uppercase; margin-bottom:0.75rem;
+  }
+  .method-video .mv-note p { font-size:1rem; line-height:1.75; color:var(--dim); margin-bottom:0.9rem; }
+  .method-video .mv-note p strong { color:var(--cream); }
+
   /* PRICING */
   .pricing { padding:2rem 0 3rem; text-align:center; }
   .price-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:1.5rem; max-width:720px; margin:2rem auto 0; }
@@ -288,6 +310,24 @@
     You shadow real American TV voices until their rhythm lives in your mouth.
     And every Friday the drill breaks open: <span class="accent">improv, karaoke, joke lab.</span>
     Because the accent sticks when you're laughing, not when you're afraid.</p>
+  </section>
+
+  <!-- METHOD VIDEO -->
+  <section class="method-video">
+    <div class="mv-card">
+      <video controls preload="none" playsinline poster="method-fake-money-fluency-poster.jpg">
+        <source src="method-fake-money-fluency.mp4" type="video/mp4"/>
+      </video>
+      <div class="mv-title">How Fake Money Builds Real Fluency · 75 sec</div>
+    </div>
+    <div class="mv-note">
+      <h3>The money is fake. The fluency is not.</h3>
+      <p>Every Speak Easy property runs on Monopoly money — you earn it by speaking, risking,
+      teaching your peers. In Pro, your daily drill streak pays out in it, and you spend it
+      at the showcases: pick the karaoke song, skip a roleplay, <strong>make the coach take the
+      angry-customer call.</strong></p>
+      <p>Watch the 75-second version of why that works.</p>
+    </div>
   </section>
 
   <!-- ARCS -->
