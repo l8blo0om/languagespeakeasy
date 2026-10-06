@@ -2,3 +2,8 @@
 *.swp
 node_modules/
 .netlify/
+
+# nested site repos — each deploys from its own GitHub repo
+speakeasy4kids/
+speakeasyclt/
+speakeasycolumbia/
