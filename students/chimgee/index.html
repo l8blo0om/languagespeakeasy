@@ -155,6 +155,40 @@
   .how h2 { font-size:1.05rem; letter-spacing:2px; margin-bottom:0.7rem; color:hsl(var(--hue) 70% 72%); }
   .how p { font-size:0.95rem; line-height:1.7; color:var(--dim); }
 
+  /* ── LOOK-IT-UP / TRANSLATE ───────────────────────────────── */
+  .tools { background:var(--panel); border:2px solid var(--violet-deep); padding:1.4rem 1.3rem; }
+  .tools h2 { font-size:1.05rem; letter-spacing:2px; margin-bottom:0.7rem; color:hsl(var(--hue) 70% 72%); }
+  .tools p { font-size:0.95rem; line-height:1.7; color:var(--dim); }
+  .tool-btns { display:flex; flex-wrap:wrap; gap:0.7rem; }
+  .tool-row { margin-top:1.2rem; }
+  .tool-lab {
+    display:block; margin-bottom:0.55rem;
+    font-family:'Oswald',sans-serif; font-size:0.68rem; letter-spacing:2.5px;
+    text-transform:uppercase; color:var(--faint);
+  }
+  .tbtn {
+    display:inline-flex; align-items:center; gap:0.55rem;
+    background:var(--violet); color:var(--paper); text-decoration:none;
+    font-family:'Oswald',sans-serif; font-weight:700; font-size:0.78rem;
+    letter-spacing:2px; text-transform:uppercase; padding:0.8rem 1.35rem;
+    border:2.5px solid #000; box-shadow:3px 3px 0 rgba(0,0,0,0.55);
+    transition:background 0.15s, color 0.15s, transform 0.15s, box-shadow 0.15s;
+  }
+  .tbtn:hover, .tbtn:focus {
+    background:var(--yellow); color:var(--dark);
+    transform:translate(-2px,-2px); box-shadow:5px 5px 0 rgba(0,0,0,0.55);
+  }
+  .tbtn .dir { font-size:0.95rem; line-height:1; }
+  .tools .fineprint {
+    margin-top:1.15rem; padding-top:0.9rem;
+    border-top:2px dotted rgba(255,255,255,0.14);
+    font-size:0.86rem; line-height:1.6; color:var(--faint);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .tbtn { transition:none; }
+    .tbtn:hover, .tbtn:focus { transform:none; box-shadow:3px 3px 0 rgba(0,0,0,0.55); }
+  }
+
   /* ─── GOALS ───────────────────────────────────── */
   .goal-grid { display:grid; grid-template-columns:1fr; gap:1.1rem; }
   @media (min-width:700px){ .goal-grid { grid-template-columns:repeat(3,1fr); } }
@@ -297,7 +331,7 @@
       <div class="body">
         <div class="when">Wednesday, November 18</div>
         <div class="clock">
-          10:30 – 11:30 AM &nbsp;·&nbsp; Lesson 01 &nbsp;·&nbsp; 60 minutes
+          11:00 AM – 12:00 PM &nbsp;·&nbsp; Lesson 01 &nbsp;·&nbsp; 60 minutes
         </div>
 
         <div class="place">▸ In person — your building's workspace</div>
@@ -323,6 +357,62 @@
       to the <a href="#log" class="accent">Lesson Log</a> below. The green box at the top always
       shows your next session. You don't need an account or a password — just keep this link.
       Check it before each lesson and you'll always know where we are.</p>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════
+       LOOK IT UP  ·  GOOGLE TRANSLATE, BOTH DIRECTIONS
+       ══════════════════════════════════════════════ -->
+  <!-- NICOLE: opens Google Translate in a new tab with the language pair
+       already set, so she lands ready to type. No script, no API key, no
+       banner injected into the page. The note underneath is deliberate —
+       it frames this as a lookup tool, not a way to write her homework.
+       Reword or delete that line if you'd rather not say it. -->
+  <section id="tools">
+    <div class="tools">
+      <h2>Look it up</h2>
+      <p>Stuck on a word between lessons? Start here — every link opens with the two
+      languages already set, so you land ready to type. Go through whichever language
+      the word lives in for you. Tap the speaker icon on Google's page to
+      <strong>hear</strong> the French out loud; that's the part most people skip.</p>
+      <div class="tool-row">
+        <span class="tool-lab">Through English</span>
+        <div class="tool-btns">
+          <a class="tbtn" href="https://translate.google.com/?sl=fr&amp;tl=en&amp;op=translate"
+             target="_blank" rel="noopener noreferrer">
+            <span class="dir">▸</span> French → English
+          </a>
+          <a class="tbtn" href="https://translate.google.com/?sl=en&amp;tl=fr&amp;op=translate"
+             target="_blank" rel="noopener noreferrer">
+            <span class="dir">▸</span> English → French
+          </a>
+        </div>
+      </div>
+
+      <!-- NICOLE: Mongolian pair added on your hunch that English isn't her
+           first language. Her name (Enkhchimeg Enkhbat) is Mongolian, and her
+           written English drops articles the way a Mongolian speaker's does —
+           but she has never actually SAID what her first language is. Ask her
+           today, and delete this row if you guessed wrong. Fair warning: MN↔FR
+           is one of Google's weaker pairs, which is why English is listed first. -->
+      <div class="tool-row">
+        <span class="tool-lab">Монголоор · Through Mongolian</span>
+        <div class="tool-btns">
+          <a class="tbtn" href="https://translate.google.com/?sl=fr&amp;tl=mn&amp;op=translate"
+             target="_blank" rel="noopener noreferrer">
+            <span class="dir">▸</span> French → Mongolian
+          </a>
+          <a class="tbtn" href="https://translate.google.com/?sl=mn&amp;tl=fr&amp;op=translate"
+             target="_blank" rel="noopener noreferrer">
+            <span class="dir">▸</span> Mongolian → French
+          </a>
+        </div>
+      </div>
+      <p class="fineprint">A word at a time, it's a dictionary and it's genuinely useful.
+      A whole sentence at a time, it does the thinking for you — and the thinking is the
+      part that makes you fluent. Use it to get unstuck, then come back and say it your way.
+      Bring me whatever it gives you that sounds strange; that's usually where the
+      interesting lesson is.</p>
     </div>
   </section>
 
