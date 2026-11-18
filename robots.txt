@@ -1,4 +1,7 @@
 User-agent: *
 Allow: /
 
+# Private student pages — unlisted, not for indexing
+Disallow: /students/
+
 Sitemap: https://languagespeakeasy.com/sitemap.xml
