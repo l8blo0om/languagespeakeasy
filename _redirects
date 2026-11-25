@@ -1,3 +1,6 @@
-/pro              /pro.html             200
-/pro/curriculum   /pro-curriculum.html  200
-/course           /course.html          200
+# Clean URLs — .html stripped
+/pro.html          /pro               301!
+/pro               /pro.html          200
+/pro/curriculum    /pro-curriculum.html  200
+/course.html       /course            301!
+/course            /course.html       200

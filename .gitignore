@@ -7,3 +7,4 @@ node_modules/
 speakeasy4kids/
 speakeasyclt/
 speakeasycolumbia/
+*.bak-*
